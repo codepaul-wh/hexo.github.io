@@ -11,6 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="Java基础注释​        什么是注释？为什么要学注释？ ​        先来回答第一个问题。什么是注释？注释是对代码的解释和说明，目的让我们更加轻松理解代码。正确的注释不会影响为代码的编译和运行。 ​        那么为什么要学注释。无论是在团队开发还是在学习官方api文档的过程中注释都十分的重要。在程序开发过程中，你的代码不止你一个人阅读，还需要被团队的其他成员阅读，那其他人又怎么自">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="认识Java">
 <meta property="og:url" content="http://codepaul.cn/2019/09/22/01-认识java/index.html">
@@ -18,7 +19,7 @@
 <meta property="og:description" content="Java基础注释​        什么是注释？为什么要学注释？ ​        先来回答第一个问题。什么是注释？注释是对代码的解释和说明，目的让我们更加轻松理解代码。正确的注释不会影响为代码的编译和运行。 ​        那么为什么要学注释。无论是在团队开发还是在学习官方api文档的过程中注释都十分的重要。在程序开发过程中，你的代码不止你一个人阅读，还需要被团队的其他成员阅读，那其他人又怎么自">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="c:%5CUsers%5C14989%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1569167071161.png">
-<meta property="og:updated_time" content="2019-09-27T09:54:34.409Z">
+<meta property="og:updated_time" content="2019-09-29T08:01:40.036Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="认识Java">
 <meta name="twitter:description" content="Java基础注释​        什么是注释？为什么要学注释？ ​        先来回答第一个问题。什么是注释？注释是对代码的解释和说明，目的让我们更加轻松理解代码。正确的注释不会影响为代码的编译和运行。 ​        那么为什么要学注释。无论是在团队开发还是在学习官方api文档的过程中注释都十分的重要。在程序开发过程中，你的代码不止你一个人阅读，还需要被团队的其他成员阅读，那其他人又怎么自">
@@ -27,7 +28,7 @@
     <link rel="alternative" href="/atom.xml" title="CodePaul的个人博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.png">
   
   
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
@@ -43,9 +44,6 @@
 
   
 
-  
-    
- 	  <script src="/lib/clickLove.js"></script>
   
   
 
@@ -79,7 +77,11 @@
 			
 				<li><a href="/" target="_blank">主页</a></li>
 	        
-				<li><a href="/tags/随笔/" target="_blank">随笔</a></li>
+				<li><a href="/tags/Java/" target="_blank">Java</a></li>
+	        
+				<li><a href="/tags/前端/" target="_blank">前端</a></li>
+	        
+				<li><a href="/tags/Hexo/" target="_blank">Hexo</a></li>
 	        
 			</ul>
 		</nav>
@@ -90,6 +92,8 @@
     			
             
     			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">技术支持</a>
+    			
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
@@ -99,11 +103,13 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" href="#" title="GitHub" target="_blank"><i class="icon-github"></i></a>
+					<a class="github" href="https://github.com/codepaul-wh" title="GitHub" target="_blank"><i class="icon-github"></i></a>
 		        
 					<a class="gitee" href="#" title="码云" target="_blank"><i class="icon-gitee"></i></a>
 		        
 					<a class="jianshu" href="#" title="简书" target="_blank"><i class="icon-jianshu"></i></a>
+		        
+					<a class="csdn" href="#" title="CSDN" target="_blank"><i class="icon-csdn"></i></a>
 		        
 			</div>
 		
@@ -139,27 +145,37 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="GitHub"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/codepaul-wh" title="GitHub"><i class="icon-github"></i></a>
 			        
 						<a class="gitee" target="_blank" href="#" title="码云"><i class="icon-gitee"></i></a>
 			        
 						<a class="jianshu" target="_blank" href="#" title="简书"><i class="icon-jianshu"></i></a>
 			        
+						<a class="csdn" target="_blank" href="#" title="CSDN"><i class="icon-csdn"></i></a>
+			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 25%"><a href="/tags/Java/">Java</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/前端/">前端</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/Hexo/">Hexo</a></li>
 		        
 				</ul>
 			</nav>
@@ -416,6 +432,17 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
 
     
@@ -521,7 +548,7 @@
       	<div class="footer-right">
 			
 			
-      		永远不要选择安逸 by Litten
+      		永远不要选择安逸 by Wh
       	</div>
     </div>
   </div>
@@ -593,6 +620,8 @@
       
     
       
+      
+      
     
       
       
@@ -604,13 +633,15 @@
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">技术支持</a></li>
+      
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -629,6 +660,10 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -674,12 +709,38 @@
     
 
     
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://hexo.io" target="_blank" class="search-title" >
+                
+                  <i class="icon-link icon"></i>
+                
+                Hexo
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" class="search-title" >
+                
+                  <i class="icon-link icon"></i>
+                
+                yilia-plus
+              </a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">主要技术：<br>Java后端开发、<br> 一直在学习路上</div>
+  	  		<div class="aboutme-wrap" id="aboutme">主要技术：<br>Java后端开发   <br> 一直在学习路上</div>
   	  	
     	</section>
     

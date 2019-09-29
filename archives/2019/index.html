@@ -21,7 +21,7 @@
     <link rel="alternative" href="/atom.xml" title="CodePaul的个人博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.png">
   
   
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
@@ -37,9 +37,6 @@
 
   
 
-  
-    
- 	  <script src="/lib/clickLove.js"></script>
   
   
 
@@ -73,7 +70,11 @@
 			
 				<li><a href="/" target="_blank">主页</a></li>
 	        
-				<li><a href="/tags/随笔/" target="_blank">随笔</a></li>
+				<li><a href="/tags/Java/" target="_blank">Java</a></li>
+	        
+				<li><a href="/tags/前端/" target="_blank">前端</a></li>
+	        
+				<li><a href="/tags/Hexo/" target="_blank">Hexo</a></li>
 	        
 			</ul>
 		</nav>
@@ -84,6 +85,8 @@
     			
             
     			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">技术支持</a>
+    			
             
     			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
@@ -93,11 +96,13 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" href="#" title="GitHub" target="_blank"><i class="icon-github"></i></a>
+					<a class="github" href="https://github.com/codepaul-wh" title="GitHub" target="_blank"><i class="icon-github"></i></a>
 		        
 					<a class="gitee" href="#" title="码云" target="_blank"><i class="icon-gitee"></i></a>
 		        
 					<a class="jianshu" href="#" title="简书" target="_blank"><i class="icon-jianshu"></i></a>
+		        
+					<a class="csdn" href="#" title="CSDN" target="_blank"><i class="icon-csdn"></i></a>
 		        
 			</div>
 		
@@ -133,27 +138,37 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="GitHub"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/codepaul-wh" title="GitHub"><i class="icon-github"></i></a>
 			        
 						<a class="gitee" target="_blank" href="#" title="码云"><i class="icon-gitee"></i></a>
 			        
 						<a class="jianshu" target="_blank" href="#" title="简书"><i class="icon-jianshu"></i></a>
 			        
+						<a class="csdn" target="_blank" href="#" title="CSDN"><i class="icon-csdn"></i></a>
+			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 25%"><a href="/tags/Java/">Java</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/前端/">前端</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/Hexo/">Hexo</a></li>
 		        
 				</ul>
 			</nav>
@@ -204,6 +219,17 @@
 
         <div class="article-info info-on-right">
           
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
           
 
         </div>
@@ -231,7 +257,7 @@
       	<div class="footer-right">
 			
 			
-      		永远不要选择安逸 by Litten
+      		永远不要选择安逸 by Wh
       	</div>
     </div>
   </div>
@@ -303,6 +329,8 @@
       
     
       
+      
+      
     
       
       
@@ -314,13 +342,15 @@
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">技术支持</a></li>
+      
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -339,6 +369,10 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -384,12 +418,38 @@
     
 
     
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="https://hexo.io" target="_blank" class="search-title" >
+                
+                  <i class="icon-link icon"></i>
+                
+                Hexo
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" class="search-title" >
+                
+                  <i class="icon-link icon"></i>
+                
+                yilia-plus
+              </a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
 
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
         
           
-  	  		<div class="aboutme-wrap" id="aboutme">主要技术：<br>Java后端开发、<br> 一直在学习路上</div>
+  	  		<div class="aboutme-wrap" id="aboutme">主要技术：<br>Java后端开发   <br> 一直在学习路上</div>
   	  	
     	</section>
     
