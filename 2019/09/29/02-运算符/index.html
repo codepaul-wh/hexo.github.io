@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://codepaul.cn">
-  <title>Archives: 2019/9 | CodePaul的个人博客</title>
+  <title>Java运算符 | CodePaul的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="CodePaul的个人博客">
-<meta property="og:url" content="http://codepaul.cn/archives/2019/09/index.html">
+  <meta name="description" content="运算符   分类     算术运算符 +，-，*，/，%，++，–   赋值运算符 =，+=，-=，*=，/=，%=   关系运算符 &amp;gt; 、 &amp;gt;= 、 &amp;lt; 、 &amp;lt;= 、 == 、 !=   逻辑运算符 &amp;amp;，|，^，！，&amp;amp;&amp;amp;，   三元运算符 数据类型 变量名 = (关系表达式) ? 结果1: 结果2；   位运算符 &amp;amp; 、| 、~ 、&amp;lt;">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java运算符">
+<meta property="og:url" content="http://codepaul.cn/2019/09/29/02-运算符/index.html">
 <meta property="og:site_name" content="CodePaul的个人博客">
+<meta property="og:description" content="运算符   分类     算术运算符 +，-，*，/，%，++，–   赋值运算符 =，+=，-=，*=，/=，%=   关系运算符 &amp;gt; 、 &amp;gt;= 、 &amp;lt; 、 &amp;lt;= 、 == 、 !=   逻辑运算符 &amp;amp;，|，^，！，&amp;amp;&amp;amp;，   三元运算符 数据类型 变量名 = (关系表达式) ? 结果1: 结果2；   位运算符 &amp;amp; 、| 、~ 、&amp;lt;">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-29T12:40:21.866Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CodePaul的个人博客">
+<meta name="twitter:title" content="Java运算符">
+<meta name="twitter:description" content="运算符   分类     算术运算符 +，-，*，/，%，++，–   赋值运算符 =，+=，-=，*=，/=，%=   关系运算符 &amp;gt; 、 &amp;gt;= 、 &amp;lt; 、 &amp;lt;= 、 == 、 !=   逻辑运算符 &amp;amp;，|，^，！，&amp;amp;&amp;amp;，   三元运算符 数据类型 变量名 = (关系表达式) ? 结果1: 结果2；   位运算符 &amp;amp; 、| 、~ 、&amp;lt;">
   
     <link rel="alternative" href="/atom.xml" title="CodePaul的个人博客" type="application/atom+xml">
   
@@ -184,41 +189,283 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-02-运算符" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      Java运算符
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2019/09/29/02-运算符/" class="archive-article-date">
         <time datetime="2019-09-29T12:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-29</time>
 </a>
 
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">911字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h1><table>
+<thead>
+<tr>
+<th align="center">分类</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">算术运算符</td>
+<td align="center">+，-，*，/，%，++，–</td>
+</tr>
+<tr>
+<td align="center">赋值运算符</td>
+<td align="center">=，+=，-=，*=，/=，%=</td>
+</tr>
+<tr>
+<td align="center">关系运算符</td>
+<td align="center">&gt; 、 &gt;= 、 &lt; 、 &lt;= 、 == 、 !=</td>
+</tr>
+<tr>
+<td align="center">逻辑运算符</td>
+<td align="center">&amp;，|，^，！，&amp;&amp;，</td>
+</tr>
+<tr>
+<td align="center">三元运算符</td>
+<td align="center">数据类型 变量名 = (关系表达式) ? 结果1: 结果2；</td>
+</tr>
+<tr>
+<td align="center">位运算符</td>
+<td align="center">&amp; 、| 、~ 、&lt;&lt;，&gt;&gt;，&gt;&gt;&gt;</td>
+</tr>
+</tbody></table>
+<h3 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h3><h5 id="号的多种意义："><a href="#号的多种意义：" class="headerlink" title="+号的多种意义："></a><strong>+</strong>号的多种意义：</h5><ul>
+<li><p>当+号的两边有一边是字符串时，进行的是字符串的拼接。</p>
+</li>
+<li><p>当+号的两边都是整数型时，进行数值的加法运算。</p>
+</li>
+</ul>
+<h5 id="，–-的操作"><a href="#，–-的操作" class="headerlink" title="++，– 的操作"></a>++，– 的操作</h5><p>  单独运算时：++在前和++在后 最后的结果是一样的。</p>
+<p>  复合运算时：其他变量放在一起使用 或者和 输出语句放在一起使用 ， 前++ 和 后++ 就产生了不同。</p>
+<ul>
+<li>++在前：例如：<strong>++i</strong>，本身先加1，再参与运算。</li>
+<li>++在后：例如：<strong>i++</strong>，本身先参与运算，运算结束后再加1。</li>
+</ul>
+<p>  – 和 ++ 用法一致。</p>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">=</td>
+<td align="center">符号<strong>右边的值</strong>赋值给<strong>左边</strong>的变量</td>
+</tr>
+<tr>
+<td align="center">+=</td>
+<td align="center">符号<strong>左边变量的值</strong>和<strong>右边的值</strong>做<strong>加法</strong>运算，结果赋值给<strong>左边</strong>的变量</td>
+</tr>
+<tr>
+<td align="center">-=</td>
+<td align="center">符号<strong>左边变量的值</strong>和<strong>右边的值</strong>做<strong>减法</strong>运算，结果赋值给<strong>左边</strong>的变量</td>
+</tr>
+<tr>
+<td align="center">*=</td>
+<td align="center">符号<strong>左边变量的值</strong>和<strong>右边的值</strong>做<strong>乘法</strong>运算，结果赋值给<strong>左边</strong>的变量</td>
+</tr>
+<tr>
+<td align="center">/=</td>
+<td align="center">符号<strong>左边变量的值</strong>和<strong>右边的值</strong>做<strong>除法</strong>运算，结果赋值给<strong>左边</strong>的变量</td>
+</tr>
+<tr>
+<td align="center">%=</td>
+<td align="center">符号<strong>左边变量的值</strong>和<strong>右边的值</strong>做<strong>取余</strong>运算，结果赋值给<strong>左边</strong>的变量</td>
+</tr>
+</tbody></table>
+<p><strong>补充：隐藏的强制类型转换</strong> </p>
+<p>除 = 运算符外，其他的扩展后的赋值运算符在<strong>将最后的结果赋值给左边的变量前，都做了一步强</strong> </p>
+<p><strong>制类型转换</strong>。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">		<span class="keyword">int</span> b = <span class="number">4</span>;</span><br><span class="line">		a += b;</span><br><span class="line">		System.out.println(a);</span><br><span class="line">		<span class="keyword">short</span> c = <span class="number">5</span>;</span><br><span class="line">		c += a; <span class="comment">//编译不报错，JVM将结果进行了强制类型转换。转换short类型</span></span><br><span class="line">		<span class="comment">//c = c + a; 编译报错，提示会精度丢失。</span></span><br><span class="line">		System.out.println(c);</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="关系运算符（比较运算符）"><a href="#关系运算符（比较运算符）" class="headerlink" title="关系运算符（比较运算符）"></a>关系运算符（比较运算符）</h3><table>
+<thead>
+<tr>
+<th align="center">关系运算符</th>
+<th align="center">符号解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&lt;</td>
+<td align="center">比较符号左边的数据是否小于右边的数据，如果小于结果是true。</td>
+</tr>
+<tr>
+<td align="center">&gt;</td>
+<td align="center">比较符号左边的数据是否大于右边的数据，如果大于结果是true。</td>
+</tr>
+<tr>
+<td align="center">&lt;=</td>
+<td align="center">比较符号左边的数据是否小于或者等于右边的数据，如果大于结果是false。</td>
+</tr>
+<tr>
+<td align="center">&gt;=</td>
+<td align="center">比较符号左边的数据是否大于或者等于右边的数据，如果小于结果是false。</td>
+</tr>
+<tr>
+<td align="center">==</td>
+<td align="center">比较符号两边数据是否相等，相等结果是true。</td>
+</tr>
+<tr>
+<td align="center">！=</td>
+<td align="center">不等于符号 ，如果符号两边的数据不相等，结果是true</td>
+</tr>
+</tbody></table>
+<ul>
+<li>比较运算符，是两个数据之间进行比较的运算，运算结果一定是boolean值 true 或者 false 。 </li>
+</ul>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><table>
+<thead>
+<tr>
+<th align="center">符合</th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">&amp;</td>
+<td align="center">与，且</td>
+<td align="center">有false则false</td>
+</tr>
+<tr>
+<td align="center">&amp;&amp;</td>
+<td align="center">双与，短路与</td>
+<td align="center">有false则false</td>
+</tr>
+<tr>
+<td align="center">|</td>
+<td align="center">单</td>
+<td align="center">有true则true</td>
+</tr>
+<tr>
+<td align="center">||</td>
+<td align="center">单或</td>
+<td align="center">有true则true</td>
+</tr>
+<tr>
+<td align="center">！</td>
+<td align="center">非</td>
+<td align="center">非false则true，非true则false</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="center">异或</td>
+<td align="center">相同为false，不同则true</td>
+</tr>
+</tbody></table>
+<h5 id="amp-和-amp-amp-的关系："><a href="#amp-和-amp-amp-的关系：" class="headerlink" title="&amp;和&amp;&amp;的关系："></a><strong>&amp;</strong>和<strong>&amp;&amp;</strong>的关系：</h5><p>都表示与，且，但是<strong>&amp;&amp;</strong>当左边为false时，右边不执行，具有短路效果。<strong>&amp;</strong>无论左边是什么，右边都会执行。</p>
+<h5 id="和-的关系："><a href="#和-的关系：" class="headerlink" title="|和||的关系："></a><strong>|</strong>和<strong>||</strong>的关系：</h5><p>都表示或，但是<strong>||</strong>当左边为true时，右边不执行，具有短路效果，<strong>|</strong>无论左边是什么，右边都会执行。</p>
+<h3 id="三元运算符-三目运算符"><a href="#三元运算符-三目运算符" class="headerlink" title="三元运算符(三目运算符)"></a>三元运算符(三目运算符)</h3><p>格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据类型 变量名 = (关系表达式) ? 结果<span class="number">1</span>:结果<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p>运算过程：</p>
+<p>​    关系表达式为true 将结果1赋值给变量名。</p>
+<p>​    关系表达式为false 将结果2赋值给变量名。</p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/29/02-运算符/" target="_blank">Java运算符</a>
-  
-    </h1>
-  
+      </a>
+    </div>
+    
 
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          CodePaul
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://codepaul.cn/2019/09/29/02-运算符/" title="Java运算符" target="_blank">http://codepaul.cn/2019/09/29/02-运算符/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
 
-        <div class="article-info info-on-right">
-          
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -230,62 +477,107 @@
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://codepaul.cn/2019/09/29/02-运算符/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/22/01-认识java/" class="archive-article-date">
-        <time datetime="2019-09-22T09:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-22</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/22/01-认识java/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">认识Java</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/22/01-认识java/" target="_blank">认识Java</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
+
+
+
+
 
 
           </div>
@@ -326,8 +618,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
