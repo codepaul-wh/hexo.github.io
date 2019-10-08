@@ -6,22 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://codepaul.cn">
-  <title>Java方法 | CodePaul的个人博客</title>
+  <title>Java基础之流程控制 | CodePaul的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="方法方法的好处 提高代码的复用性，从而提高开发效率 将每个功能进行独立管理，提高后期的可维护性">
+  <meta name="description" content="流程控制两种基本的流程控制结构：分支结构和循环结构。其中分支结构用于实现根据条件来选择性地执行某段代码，循环结构则用于实现根据循环条件重复执行某段代码。 分支结构">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java方法">
-<meta property="og:url" content="http://codepaul.cn/2019/10/07/03-方法/index.html">
+<meta property="og:title" content="Java基础之流程控制">
+<meta property="og:url" content="http://codepaul.cn/2019/10/08/04-流程控制/index.html">
 <meta property="og:site_name" content="CodePaul的个人博客">
-<meta property="og:description" content="方法方法的好处 提高代码的复用性，从而提高开发效率 将每个功能进行独立管理，提高后期的可维护性">
+<meta property="og:description" content="流程控制两种基本的流程控制结构：分支结构和循环结构。其中分支结构用于实现根据条件来选择性地执行某段代码，循环结构则用于实现根据循环条件重复执行某段代码。 分支结构">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-07T13:55:01.451Z">
+<meta property="og:image" content="http://codepaul.cn/.cn//W:%5CHexo%5CHexo%5Csource_posts%5C04-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%5C1568890657385.png">
+<meta property="og:image" content="http://codepaul.cn/.cn//W:%5CHexo%5CHexo%5Csource_posts%5C04-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%5C1568891025877.png">
+<meta property="og:image" content="http://codepaul.cn/.cn//W:%5CHexo%5CHexo%5Csource_posts%5C04-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%5C1568891360401.png">
+<meta property="og:updated_time" content="2019-10-08T16:21:08.965Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java方法">
-<meta name="twitter:description" content="方法方法的好处 提高代码的复用性，从而提高开发效率 将每个功能进行独立管理，提高后期的可维护性">
+<meta name="twitter:title" content="Java基础之流程控制">
+<meta name="twitter:description" content="流程控制两种基本的流程控制结构：分支结构和循环结构。其中分支结构用于实现根据条件来选择性地执行某段代码，循环结构则用于实现根据循环条件重复执行某段代码。 分支结构">
+<meta name="twitter:image" content="http://codepaul.cn/.cn//W:%5CHexo%5CHexo%5Csource_posts%5C04-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%5C1568890657385.png">
   
     <link rel="alternative" href="/atom.xml" title="CodePaul的个人博客" type="application/atom+xml">
   
@@ -185,14 +189,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-03-方法" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-04-流程控制" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      Java方法
+      Java基础之流程控制
     </h1>
   
 
@@ -204,8 +208,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2019/10/07/03-方法/" class="archive-article-date">
-        <time datetime="2019-10-07T12:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-07</time>
+<a href="/2019/10/08/04-流程控制/" class="archive-article-date">
+        <time datetime="2019-10-08T14:00:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-08</time>
 </a>
 
   
@@ -218,7 +222,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">788字</span>
+      <span class="post-count">1.9k字</span>
     </span>
   </span>
 
@@ -227,7 +231,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">2分</span>
+      <span class="post-count">7分</span>
     </span>
   </span>
 </div>
@@ -238,74 +242,137 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="方法的好处"><a href="#方法的好处" class="headerlink" title="方法的好处"></a>方法的好处</h2><ul>
-<li>提高代码的复用性，从而提高开发效率</li>
-<li>将每个功能进行独立管理，提高后期的可维护性</li>
-</ul>
-<a id="more"></a>
+    <h1 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h1><p>两种基本的流程控制结构：<strong>分支结构和循环结构</strong>。其中分支结构用于实现根据条件来选择性地执行某段代码，循环结构则用于实现根据循环条件重复执行某段代码。</p>
+<h2 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h2><a id="more"></a>
 
-<h2 id="方法的定义"><a href="#方法的定义" class="headerlink" title="方法的定义"></a>方法的定义</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 方法名（形参类型<span class="number">1</span>  形参名<span class="number">2</span>....） &#123;</span><br><span class="line">	方法体；</span><br><span class="line">	<span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;</span><br><span class="line">返回值类型：返回的数据类型，可以是基本数据类型，引用数据类型，无返回值（<span class="keyword">void</span>）</span><br><span class="line">方法名：方法的名字，见名思意</span><br><span class="line">方法体：特殊功能的代码</span><br><span class="line"><span class="keyword">return</span>：<span class="number">1</span>、结束方法。<span class="number">2</span>、并将结果返回给调用者方法</span><br><span class="line">返回值：要返回给调用者方法的结果数据</span><br></pre></td></tr></table></figure>
+<h3 id="if语句第一种格式："><a href="#if语句第一种格式：" class="headerlink" title="if语句第一种格式："></a>if语句第一种格式：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(关系表达式) &#123;</span><br><span class="line">	<span class="comment">//语句体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>​    示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public static int getSum(int a, int b) &#123;</span><br><span class="line">	int sum = a + b;</span><br><span class="line">	return summ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>执行流程</strong> </p>
+<p>1.首先判断关系表达式看其结果是true还是false </p>
+<p>2.如果是true就执行语句体 </p>
+<p>3.如果是false就不执行语句体</p>
+<p><img src="/.cn//W:%5CHexo%5CHexo%5Csource_posts%5C04-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%5C1568890657385.png" alt="1568890657385"></p>
+<p><strong>代码举例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">int</span> b = <span class="number">4</span>;</span><br><span class="line">	<span class="keyword">if</span>(a == b) &#123;</span><br><span class="line">		System.out.println(<span class="string">"a == b"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="方法的特点和调用"><a href="#方法的特点和调用" class="headerlink" title="方法的特点和调用"></a>方法的特点和调用</h2><p>方法特点：不调用，不执行</p>
-<blockquote>
-<p>方法的调用格式</p>
-</blockquote>
+<h3 id="if语句第二种格式"><a href="#if语句第二种格式" class="headerlink" title="if语句第二种格式"></a>if语句第二种格式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(关系表达式) &#123;</span><br><span class="line">	<span class="comment">//语句体1</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="comment">//语句体2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>执行流程</strong> </p>
+<ol>
+<li>首先判断关系表达式看其结果是true还是false </li>
+<li>如果是true就执行语句体1 </li>
+<li>如果是false就执行语句体2</li>
+</ol>
+<p><img src="/.cn//W:%5CHexo%5CHexo%5Csource_posts%5C04-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%5C1568891025877.png" alt="1568891025877"></p>
+<p><strong>代码举例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">		<span class="keyword">int</span> b = <span class="number">4</span>;</span><br><span class="line">		<span class="keyword">if</span>(a == b) &#123;</span><br><span class="line">			System.out.println(<span class="string">"a == b"</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">"a != b"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="if语句第三种格式"><a href="#if语句第三种格式" class="headerlink" title="if语句第三种格式"></a>if语句第三种格式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(关系表达式) &#123;</span><br><span class="line">	<span class="comment">//语句体1</span></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(关系表达式<span class="number">2</span>) &#123;</span><br><span class="line">	<span class="comment">//语句体2</span></span><br><span class="line">&#125; </span><br><span class="line">...</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span>(关系表达式n) &#123;</span><br><span class="line">	<span class="comment">//语句体n</span></span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">	<span class="comment">//语句体n + 1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>执行流程</strong> </p>
 <ul>
-<li><p>直接调用 ：应用于返回值类型是void</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">方法名(实参);</span><br></pre></td></tr></table></figure>
+<li><p>首先判断关系表达式1看其结果是true还是false </p>
 </li>
-<li><p>输出调用：应用于返回值不是void</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(方法名(实参));</span><br></pre></td></tr></table></figure>
+<li><p>如果是true就执行语句体1 </p>
 </li>
-<li><p>赋值调用：应用于返回值不是void（推荐）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">返回值数据类型 变量名 = 方法名(实参);</span><br></pre></td></tr></table></figure>
+<li><p>如果是false就继续判断关系表达式2看其结果是true还是false </p>
+</li>
+<li><p>如果是true就执行语句体2 </p>
+</li>
+<li><p>如果是false就继续判断关系表达式…看其结果是true还是false </p>
+</li>
+<li><p>… </p>
+</li>
+<li><p>如果没有任何关系表达式为true，就执行语句体n+1。</p>
+</li>
+</ul>
+<p><img src="/.cn//W:%5CHexo%5CHexo%5Csource_posts%5C04-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%5C1568891360401.png" alt="1568891360401"></p>
+<p><strong>代码举例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">		<span class="keyword">int</span> b = <span class="number">4</span>;</span><br><span class="line">		<span class="keyword">if</span>(a &gt; b) &#123;</span><br><span class="line">			System.out.println(<span class="string">"a &gt; b"</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(a &lt; b)&#123;</span><br><span class="line">			System.out.println(<span class="string">"a &gt; b"</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">"a = b"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
-<h2 id="方法注意事项"><a href="#方法注意事项" class="headerlink" title="方法注意事项"></a>方法注意事项</h2><ul>
-<li>方法定义在类中其他方法的外面，不能方法进行嵌套；</li>
-<li>return类型必须和return语句返回的类型相同，否则编译失败</li>
-<li>方法可以有多个return ， 但是只会执行一个return；</li>
-<li>当方法没有返回值的时候， 返回值不可以为空， 用void关键字代替；</li>
-<li>当方法没有返回值的时候，return可以省略；</li>
-<li>return后面不可以写代码；</li>
-</ul>
-<h2 id="方法的可变参数"><a href="#方法的可变参数" class="headerlink" title="方法的可变参数"></a>方法的可变参数</h2><ul>
-<li><p>JDk5.0新特性</p>
-</li>
-<li><p>可变参数的条件</p>
-<ul>
-<li>多个参数</li>
-<li>参数数据类型相同</li>
-</ul>
-</li>
-<li><p>可变参数使用格式</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 方法名（数据类型... 数组名） &#123;</span><br><span class="line">	方法体；</span><br><span class="line">	<span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="if语句和三元运算符的互换"><a href="#if语句和三元运算符的互换" class="headerlink" title="if语句和三元运算符的互换"></a>if语句和三元运算符的互换</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//两个数的最大值</span></span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">		<span class="keyword">int</span> b = <span class="number">4</span>;</span><br><span class="line">		<span class="keyword">int</span> max;</span><br><span class="line">		<span class="keyword">if</span>(a &gt; b) &#123;</span><br><span class="line">			max = a;</span><br><span class="line">		&#125;  <span class="keyword">else</span> &#123;</span><br><span class="line">			max = b;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">int</span> max1 =  (a &gt; b) ? a : b;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
-<p>等价与</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">修饰符 返回值类型 方法名（数据类型[] 数组名） &#123;</span><br><span class="line">	方法体；</span><br><span class="line">	<span class="keyword">return</span> 返回值;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>可变参数的注意事项</p>
+<h3 id="分支结构：switch"><a href="#分支结构：switch" class="headerlink" title="分支结构：switch"></a>分支结构：switch</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(表达式) &#123;</span><br><span class="line">    <span class="keyword">case</span>  数值<span class="number">1</span>:</span><br><span class="line">        <span class="comment">//语句体1</span></span><br><span class="line">    	<span class="keyword">break</span>;</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">case</span>  数值<span class="number">2</span>:</span><br><span class="line">        <span class="comment">//语句体2</span></span><br><span class="line">    	<span class="keyword">break</span>;</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">case</span>  数值<span class="number">3</span>:</span><br><span class="line">        <span class="comment">//语句体3</span></span><br><span class="line">    	<span class="keyword">break</span>;</span><br><span class="line">        ... </span><br><span class="line">    <span class="keyword">default</span> : </span><br><span class="line">        <span class="comment">//语句体;</span></span><br><span class="line">     	<span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//break:表示中断,结束的意思。 </span></span><br><span class="line"><span class="comment">//default:表示所有的情况都不匹配的时候，就执行语句体n+1。和if语句的else相似。</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>执行流程：</strong> </p>
 <ul>
-<li>当可变参数和普通参数同时存在时，可变参数放在参数列表的最后面</li>
-</ul>
+<li><p>首先计算出表达式的值 </p>
+</li>
+<li><p>其次，和case依次比较，一旦有对应的值，就会执行相应的语句，在执行的过程中，遇到break就 会结束。 </p>
+</li>
+<li><p>最后，如果所有的case都和表达式的值不匹配，就会执行default语句体部分，然后程序结束掉。</p>
 </li>
 </ul>
-<h2 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h2><p>​    方法的重载发生在同一个类中，运行存在一个以上的同名方法，只要他们参数列表不同即可，与返回值类型和修饰符无关。</p>
-<p>判断方法重载：（至少满足一项）</p>
-<p>​        -参数<strong>类型不同</strong>。</p>
-<p>​        -参数<strong>个数不同</strong>。</p>
-<p>​        -参数<strong>顺序不同</strong>。</p>
-<h2 id="形参和实参"><a href="#形参和实参" class="headerlink" title="形参和实参"></a>形参和实参</h2><p>形参：指方法名后面括号里面的变量名称称为形式参数（简称形参），即形参出现在方法的定义中</p>
-<p>实参：指在调用方法中方法名后面括号里面的参数称为实际参数（简称实参），即实惨出现在方法的            调用中。</p>
-<p>形参和实参的特点：</p>
-<ul>
-<li>方法的形参为基本数据类型时，形参值的改变不会影响实参。</li>
-<li>方法的形参为引用数据类型时，形参地址值的改变不会影响实参，但是形参地址值里面的数据       改变时会影响实参</li>
-</ul>
+<p><strong>注意事项：</strong></p>
+<p>switch（表达式）的数值类型是有限的，只能是四种基本数据类型和两种引用数据类型。</p>
+<p>四种基本数据类型：byte，short， int， char。</p>
+<p>两种引用数据类型：jdk5.0后支持枚举，jdk7.0后支持字符串String。</p>
+<p>default的位置和case的位置可以互换，不影响。</p>
+<p><strong>代码举例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">		<span class="keyword">switch</span>(a) &#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">			System.out.println(<span class="string">"a = 1"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">			System.out.println(<span class="string">"a = 2"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">			System.out.println(<span class="string">"a = 3"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span> : </span><br><span class="line">			System.out.println(<span class="string">"a 不等于 1，2，3"</span>);</span><br><span class="line">			<span class="keyword">break</span>;	</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">//输出 a = 3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="case穿透性"><a href="#case穿透性" class="headerlink" title="case穿透性"></a>case穿透性</h3><p>在switch语句中，如果case的后面不写break，将出现穿透现象，也就是一旦匹配成功，不会在判断下一个case的值，直接向后运行，直到遇到break或者整个switch语句结束，switch语句执行终止。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">		<span class="keyword">switch</span>(a) &#123;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">				System.out.println(<span class="string">"a = 1"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">				System.out.println(<span class="string">"a = 2"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">				System.out.println(<span class="string">"a = 3"</span>);</span><br><span class="line">			<span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">				System.out.println(<span class="string">"a = 4"</span>);</span><br><span class="line">			<span class="keyword">default</span> : </span><br><span class="line">				System.out.println(<span class="string">"a 不等于 1，2，3，4"</span>);</span><br><span class="line">			<span class="keyword">break</span>;	</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"><span class="comment">//此时会输入 </span></span><br><span class="line"><span class="comment">//a = 3 </span></span><br><span class="line"><span class="comment">//a = 4</span></span><br><span class="line"><span class="comment">//a 不等于 1，2，3，4</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><p>​        循环语句可以在满足循环条件的情况下，反复执行某一段代码，这段被重复执行的代码被称为循环体语句，当反复执行这个循环体时，需要在合适的时候把循环判断条件修改为false，从而结束循环，否则循 环将一直执行下去，形成死循环。</p>
+<h3 id="for循环："><a href="#for循环：" class="headerlink" title="for循环："></a>for循环：</h3><p>格式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(初始化语句①; 循环条件语句②; 迭代语句③) &#123;</span><br><span class="line">    <span class="comment">//循环体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>执行流程：</strong> </p>
+<p>​    第一步：执行初始化语句①，完成循环变量的初始化； </p>
+<p>​    第二步：执行循环条件语句②，看循环条件语句的值是true，还是false； </p>
+<p>​                    如果是true，执行第三步； </p>
+<p>​    如果是false，循环语句中止，循环不再执行。 </p>
+<p>​    第三步：执行循环体语句③ </p>
+<p>​    第四步：执行迭代语句④，针对循环变量重新赋值 </p>
+<p>​    第五步：根据循环变量的新值，重新从第二步开始再执行一遍</p>
+<p><strong>代码举例</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">			System.out.println(<span class="string">"1"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="while循环："><a href="#while循环：" class="headerlink" title="while循环："></a>while循环：</h3><p><strong>while语句标准格式：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(条件语句①) &#123;</span><br><span class="line">	<span class="comment">//循环语句体②	</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>执行流程：</strong> </p>
+<p>第一步：执行循环条件语句①，看循环条件语句的值是true，还是false； </p>
+<p>​    如果是true，执行第二步； </p>
+<p>​    如果是false，循环语句中止，循环不再执行。 </p>
+<p>第二步：执行循环体语句②； </p>
+<p>第三步：循环体语句执行完后，重新从第一步开始再执行一遍 </p>
+<p><strong>while扩展格式：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">初始化语句①;</span><br><span class="line">while(条件语句②) &#123;</span><br><span class="line">	循环语句体	</span><br><span class="line">	迭代语句③</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="do…-while（）"><a href="#do…-while（）" class="headerlink" title="do… while（）"></a>do… while（）</h3><p><strong>do…while()语句标准格式</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">	循环体语句①;</span><br><span class="line">&#125; <span class="keyword">while</span> (循环条件语句②);</span><br></pre></td></tr></table></figure>
+
+<p><strong>执行流程：</strong> </p>
+<p>第一步：执行循环体语句①； </p>
+<p>第二步：执行循环条件语句②，看循环条件语句的值是true，还是false； </p>
+<p>​    如果是true，执行第三步； </p>
+<p>​    如果是false，循环语句终止，循环不再执行。 </p>
+<p>第三步：循环条件语句执行完后，重新从第一步开始再执行一遍 </p>
+<p><strong>do…while（）语句扩展格式</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">初始化语句①</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">	循环体语句②;</span><br><span class="line">	迭代语句③;</span><br><span class="line">&#125; <span class="keyword">while</span> (循环条件语句④);</span><br></pre></td></tr></table></figure>
+
+<h3 id="循环语句的区别"><a href="#循环语句的区别" class="headerlink" title="循环语句的区别"></a>循环语句的区别</h3><p><strong>扩展格式的区别（了解）</strong> </p>
+<p>​    从循环次数角度分析 </p>
+<p>​        do…while循环至少执行一次循环体语句 </p>
+<p>​        for和while循环先循环条件语句是否成立，然后决定是否执行循环体，至少执行零次循环体 </p>
+<p>语句 </p>
+<p>从循环变量的生命周期角度分析 </p>
+<p>​        for循环的循环变量，在循环语句结束后，不可以被访问； </p>
+<p>​        while和do…while循环的循环变量，是可以被继续使用的； </p>
+<p><strong>标准格式的区别（理解）：</strong> </p>
+<p>遍历有明显的循环次数（范围）的需求，选择for循环 </p>
+<p>遍历没有明显的循环次数（范围）的需求，循环while循环</p>
+<h2 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h2><h3 id="break"><a href="#break" class="headerlink" title="break"></a>break</h3><p><strong>使用场景：终止switch或者循环</strong> </p>
+<p>​        在选择结构switch语句中 </p>
+<p>​        在循环语句中 </p>
+<p>​        离开使用场景的存在是没有意义的 </p>
+<p>​        break后面不可以写任何语句。因为永远执行不到。</p>
+<h3 id="continue"><a href="#continue" class="headerlink" title="continue"></a>continue</h3><p><strong>使用场景：结束本次循环，继续下一次的循环</strong></p>
+<p>continue后面不可以写任何语句。因为永远执行不到</p>
+<h3 id="return"><a href="#return" class="headerlink" title="return"></a>return</h3><p><strong>使用场景：应用在方法中，结束方法的</strong></p>
+<p>return后面不可以写任何语句。因为永远执行不到。</p>
 
     
 
@@ -352,7 +419,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://codepaul.cn/2019/10/07/03-方法/" title="Java方法" target="_blank">http://codepaul.cn/2019/10/07/03-方法/</a>
+          <a href="http://codepaul.cn/2019/10/08/04-流程控制/" title="Java基础之流程控制" target="_blank">http://codepaul.cn/2019/10/08/04-流程控制/</a>
         </li>
         <li>
           <strong>版权声明： </strong>
@@ -427,7 +494,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://codepaul.cn/2019/10/07/03-方法/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://codepaul.cn/2019/10/08/04-流程控制/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -442,18 +509,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/10/08/04-流程控制/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Java基础之流程控制
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/09/29/02-运算符/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java运算符</div>
+    <a href="/2019/10/07/03-方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java方法</div>
       <i class="icon-circle-right"></i>
     </a>
   
