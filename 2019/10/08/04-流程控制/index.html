@@ -19,7 +19,9 @@
 <meta property="og:description" content="流程控制两种基本的流程控制结构：分支结构和循环结构。其中分支结构用于实现根据条件来选择性地执行某段代码，循环结构则用于实现根据循环条件重复执行某段代码。 分支结构">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://codepaul.cn/2019/10/08/04-流程控制/1568890657385.png">
-<meta property="og:updated_time" content="2019-10-09T16:19:26.994Z">
+<meta property="og:image" content="http://codepaul.cn/2019/10/08/04-流程控制/1568891025877.png">
+<meta property="og:image" content="http://codepaul.cn/2019/10/08/04-流程控制/1568891360401.png">
+<meta property="og:updated_time" content="2019-10-09T16:22:12.715Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java基础之流程控制">
 <meta name="twitter:description" content="流程控制两种基本的流程控制结构：分支结构和循环结构。其中分支结构用于实现根据条件来选择性地执行某段代码，循环结构则用于实现根据循环条件重复执行某段代码。 分支结构">
@@ -261,6 +263,7 @@
 <li>如果是true就执行语句体1 </li>
 <li>如果是false就执行语句体2</li>
 </ol>
+<p><img src="/2019/10/08/04-流程控制/1568891025877.png" alt></p>
 <p><strong>代码举例</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">		<span class="keyword">int</span> b = <span class="number">4</span>;</span><br><span class="line">		<span class="keyword">if</span>(a == b) &#123;</span><br><span class="line">			System.out.println(<span class="string">"a == b"</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">"a != b"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
@@ -276,6 +279,7 @@
 <li>… </li>
 <li>如果没有任何关系表达式为true，就执行语句体n+1。</li>
 </ul>
+<p><img src="/2019/10/08/04-流程控制/1568891360401.png" alt></p>
 <p><strong>代码举例</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">		<span class="keyword">int</span> b = <span class="number">4</span>;</span><br><span class="line">		<span class="keyword">if</span>(a &gt; b) &#123;</span><br><span class="line">			System.out.println(<span class="string">"a &gt; b"</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span>(a &lt; b)&#123;</span><br><span class="line">			System.out.println(<span class="string">"a &gt; b"</span>);</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			System.out.println(<span class="string">"a = b"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
@@ -497,15 +501,6 @@
 
 
 <nav id="article-nav">
-  
-    <a href="/2019/10/09/chshi/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          chshi
-        
-      </div>
-    </a>
   
   
     <a href="/2019/10/07/03-方法/" id="article-nav-older" class="article-nav-link-wrap">
