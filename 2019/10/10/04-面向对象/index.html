@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://codepaul.cn">
-  <title>Archives: 2019/9 | CodePaul的个人博客</title>
+  <title>Java面向对象 | CodePaul的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="CodePaul的个人博客">
-<meta property="og:url" content="http://codepaul.cn/archives/2019/09/index.html">
+  <meta name="description" content="三大特性： 封装继承多态面向过程 :  强调过程，怎么做这件事，解决小问题。站在执行者的角度思考问题 面向对象：强调对象，由谁来做这件事情，解决大问题。 站在指挥者的角度思考问题">
+<meta name="keywords" content="Java,面向对象">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java面向对象">
+<meta property="og:url" content="http://codepaul.cn/2019/10/10/04-面向对象/index.html">
 <meta property="og:site_name" content="CodePaul的个人博客">
+<meta property="og:description" content="三大特性： 封装继承多态面向过程 :  强调过程，怎么做这件事，解决小问题。站在执行者的角度思考问题 面向对象：强调对象，由谁来做这件事情，解决大问题。 站在指挥者的角度思考问题">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-10-10T15:18:20.714Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CodePaul的个人博客">
+<meta name="twitter:title" content="Java面向对象">
+<meta name="twitter:description" content="三大特性： 封装继承多态面向过程 :  强调过程，怎么做这件事，解决小问题。站在执行者的角度思考问题 面向对象：强调对象，由谁来做这件事情，解决大问题。 站在指挥者的角度思考问题">
   
     <link rel="alternative" href="/atom.xml" title="CodePaul的个人博客" type="application/atom+xml">
   
@@ -180,41 +185,220 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-04-面向对象" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/29/02-运算符/" class="archive-article-date">
-        <time datetime="2019-09-29T12:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-29</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/29/02-运算符/" target="_blank">Java运算符</a>
   
+    <h1 class="article-title" itemprop="name">
+      Java面向对象
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2019/10/10/04-面向对象/" class="archive-article-date">
+        <time datetime="2019-10-10T15:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">763字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">2分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>三大特性：</p>
+<h4 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h4><h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><h4 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h4><p>面向过程 :  强调过程，怎么做这件事，解决小问题。站在执行者的角度思考问题</p>
+<p>面向对象：强调对象，由谁来做这件事情，解决大问题。 站在指挥者的角度思考问题</p>
+<a id="more"></a>
+
+<h2 id="类和对象"><a href="#类和对象" class="headerlink" title="类和对象"></a>类和对象</h2><ul>
+<li><p>类：是一组相关属性和行为的集合，是一类事务的模板</p>
+</li>
+<li><p>对象：是一类事物的具体表现，对象是类的实例，具备类的成员变量和成员方法</p>
+</li>
+</ul>
+<h3 id="类和对象的关系"><a href="#类和对象的关系" class="headerlink" title="类和对象的关系"></a>类和对象的关系</h3><ul>
+<li><p>类是抽象的，类是对一类事物的描述。</p>
+</li>
+<li><p>对象是具体的，对象是一类事务的实例。</p>
+</li>
+<li><p>类是对象的模板，对象是类的实体或者实例</p>
+</li>
+</ul>
+<h3 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h3><ul>
+<li>*<em>属性 *</em>：事物的状态信息。</li>
+<li><strong>行为</strong>：事物能够做什么。</li>
+</ul>
+<p>在Java中，用<strong>class关键字</strong>表示<strong>类</strong></p>
+<p>在Java中，用<strong>成员变量</strong>表示<strong>属性</strong>。</p>
+<p>在Java中，用<strong>成员方法</strong>表示<strong>行为</strong>。</p>
+<p><strong>成员变量</strong>：定义在类中，方法外的变量。</p>
+<p><strong>成员方法</strong>：</p>
+<ul>
+<li>实例方法(对象方法)  在方法声明中， 没有static声明的方法。</li>
+<li>静态方法 在方法声明中，有static声明的方法</li>
+</ul>
+<h3 id="类的定义格式举例："><a href="#类的定义格式举例：" class="headerlink" title="类的定义格式举例："></a>类的定义格式举例：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> class <span class="title">Student</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">//成员变量</span></span><br><span class="line">	String name;</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//成员方法</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"吃饭"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">study</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"学习"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="对象使用格式"><a href="#对象使用格式" class="headerlink" title="对象使用格式"></a>对象使用格式</h2><h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">类名 对象名 = <span class="keyword">new</span> 类名();     <span class="comment">//存放在堆内存中</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用对象访问类中的成员"><a href="#使用对象访问类中的成员" class="headerlink" title="使用对象访问类中的成员"></a>使用对象访问类中的成员</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">对象名.成员变量;</span><br><span class="line">对象名.成员方法();</span><br></pre></td></tr></table></figure>
+
+<h3 id="对象使用代码举例"><a href="#对象使用代码举例" class="headerlink" title="对象使用代码举例"></a>对象使用代码举例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OopDemo01</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//实例化对象</span></span><br><span class="line">		Student stu = <span class="keyword">new</span> Student();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//访问对象的成员变量</span></span><br><span class="line">		System.out.println(<span class="string">"姓名："</span> + stu.name);   <span class="comment">//姓名：null</span></span><br><span class="line">		System.out.println(<span class="string">"年龄:"</span> + stu.age);	<span class="comment">//年龄：0</span></span><br><span class="line"></span><br><span class="line">		stu.name = <span class="string">"张三"</span>;</span><br><span class="line">		stu.age = <span class="number">20</span>;</span><br><span class="line">		<span class="comment">//访问对象的成员变量</span></span><br><span class="line">		System.out.println(<span class="string">"姓名："</span> + stu.name);	<span class="comment">//姓名：张三</span></span><br><span class="line">		System.out.println(<span class="string">"年龄："</span> + stu.age);	<span class="comment">//年龄：20</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//访问对象的成员方法</span></span><br><span class="line">		stu.eat();		<span class="comment">//吃饭</span></span><br><span class="line">		stu.study();	<span class="comment">//学习</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="成员变量的默认值"><a href="#成员变量的默认值" class="headerlink" title="成员变量的默认值"></a>成员变量的默认值</h3><table>
+<thead>
+<tr>
+<th></th>
+<th align="left">数据类型</th>
+<th align="center">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基本数据类型</td>
+<td align="left">整型(byte，short,  int ,  long)</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">浮点型(float,double)</td>
+<td align="center">0.0</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">字符型(char)</td>
+<td align="center">‘u\0000’</td>
+</tr>
+<tr>
+<td></td>
+<td align="left">布尔型(boolean)</td>
+<td align="center">false</td>
+</tr>
+<tr>
+<td>引用数据类型</td>
+<td align="left">数组，类，接口</td>
+<td align="center">null</td>
+</tr>
+</tbody></table>
+<h2 id="成员变量和局部变量区别"><a href="#成员变量和局部变量区别" class="headerlink" title="成员变量和局部变量区别"></a>成员变量和局部变量区别</h2><ul>
+<li>在代码中的位置：<ul>
+<li>成员变量：定义在类中，方法外。</li>
+<li>局部变量：定义在方法中或者方法声明上(形参)</li>
+</ul>
+</li>
+<li>在内存中的位置：<ul>
+<li>成员变量：在堆内存中。</li>
+<li>局部变量：在栈内存中。</li>
+</ul>
+</li>
+<li>默认值<ul>
+<li>成员变量：成员变量有默认值</li>
+<li>局部变量：没有默认值。需要必须先定义，初始化然后在使用。</li>
+</ul>
+</li>
+<li>作用范围<ul>
+<li>成员变量：作用在整个类中</li>
+<li>局部变量：作用在方法内</li>
+</ul>
+</li>
+<li>生命周期<ul>
+<li>成员变量：随着对象的创建而存在，随着对象的消失而消失</li>
+<li>局部变量：随着方法的调用而存在，随着方法的调用完毕而消失</li>
+</ul>
+</li>
+</ul>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          CodePaul
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://codepaul.cn/2019/10/10/04-面向对象/" title="Java面向对象" target="_blank">http://codepaul.cn/2019/10/10/04-面向对象/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -222,66 +406,124 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/22/01-认识java/" class="archive-article-date">
-        <time datetime="2019-09-22T09:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-22</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/22/01-认识java/" target="_blank">认识Java</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面向对象</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://codepaul.cn/2019/10/10/04-面向对象/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2019/10/10/05-面向对象--封装/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java面向对象---封装
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/08/04-流程控制/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java基础之流程控制</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -322,8 +564,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
