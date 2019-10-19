@@ -6,17 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://codepaul.cn">
-  <title>Archives: 2019/9 | CodePaul的个人博客</title>
+  <title>Java常用类 | CodePaul的个人博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="CodePaul的个人博客">
-<meta property="og:url" content="http://codepaul.cn/archives/2019/09/index.html">
+  <meta name="description" content="String类String类：代表字符串。Java 程序中的所有字符串字面值（如 “abc” ）都作为此类的实例实现。  String是一个final类，代表不可变的字符序列。 字符串是常量，用双引号引起来表示。它们的值在创建之后不能更改。 String对象的字符内容是存储在一个字符数组value[]中的。（jdk1.8）">
+<meta name="keywords" content="Java,常用类,String">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java常用类">
+<meta property="og:url" content="http://codepaul.cn/2019/10/13/15-常用类之String类/index.html">
 <meta property="og:site_name" content="CodePaul的个人博客">
+<meta property="og:description" content="String类String类：代表字符串。Java 程序中的所有字符串字面值（如 “abc” ）都作为此类的实例实现。  String是一个final类，代表不可变的字符序列。 字符串是常量，用双引号引起来表示。它们的值在创建之后不能更改。 String对象的字符内容是存储在一个字符数组value[]中的。（jdk1.8）">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://codepaul.cn/2019/10/13/15-常用类之String类/String%E7%B1%BB.png">
+<meta property="og:image" content="http://codepaul.cn/2019/10/13/15-常用类之String类/newString.png">
+<meta property="og:image" content="http://codepaul.cn/2019/10/13/15-常用类之String类/String1.png">
+<meta property="og:image" content="http://codepaul.cn/2019/10/13/15-常用类之String类/String3.png">
+<meta property="og:image" content="http://codepaul.cn/2019/10/13/15-常用类之String类/String4.png">
+<meta property="og:image" content="http://codepaul.cn/2019/10/13/15-常用类之String类/StringBuffer.png">
+<meta property="og:image" content="http://codepaul.cn/2019/10/13/15-常用类之String类/StringBuilder.png">
+<meta property="og:updated_time" content="2019-10-19T11:30:26.538Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CodePaul的个人博客">
+<meta name="twitter:title" content="Java常用类">
+<meta name="twitter:description" content="String类String类：代表字符串。Java 程序中的所有字符串字面值（如 “abc” ）都作为此类的实例实现。  String是一个final类，代表不可变的字符序列。 字符串是常量，用双引号引起来表示。它们的值在创建之后不能更改。 String对象的字符内容是存储在一个字符数组value[]中的。（jdk1.8）">
+<meta name="twitter:image" content="http://codepaul.cn/2019/10/13/15-常用类之String类/String%E7%B1%BB.png">
   
     <link rel="alternative" href="/atom.xml" title="CodePaul的个人博客" type="application/atom+xml">
   
@@ -180,41 +193,218 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-15-常用类之String类" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/29/02-运算符/" class="archive-article-date">
-        <time datetime="2019-09-29T12:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-29</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/29/02-运算符/" target="_blank">Java运算符</a>
   
+    <h1 class="article-title" itemprop="name">
+      Java常用类
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2019/10/13/15-常用类之String类/" class="archive-article-date">
+        <time datetime="2019-10-13T08:51:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-13</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.3k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">5分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h1><p>String类：代表字符串。Java 程序中的所有字符串字面值（如 “abc” ）都作为此类的实例实现。 </p>
+<p>String是一个final类，代表不可变的字符序列。</p>
+<p>字符串是常量，用双引号引起来表示。它们的值在创建之后不能更改。</p>
+<p>String对象的字符内容是存储在一个字符数组value[]中的。（jdk1.8）</p>
+<a id="more"></a>
+
+<p><img src="/2019/10/13/15-常用类之String类/String%E7%B1%BB.png" alt="String类源码"></p>
+<p><strong>String s1 = new String(“hello”);</strong></p>
+<p>字符串常量池中有一个对象，堆中有一个字符串对象。</p>
+<p><img src="/2019/10/13/15-常用类之String类/newString.png" alt="newString"></p>
+<p><strong>String s1 = “hello”;</strong></p>
+<p>在常量池中创建对象</p>
+<p><img src="/2019/10/13/15-常用类之String类/String1.png" alt></p>
+<p><strong>String s1 = new String(“hello”);</strong></p>
+<p><strong>String s2 = new String(“hello”);</strong></p>
+<p><img src="/2019/10/13/15-常用类之String类/String3.png" alt></p>
+<p><strong>String s1 = “hello”;</strong></p>
+<p><strong>String s2 = “hello”;</strong></p>
+<p><img src="/2019/10/13/15-常用类之String类/String4.png" alt></p>
+<h2 id="String常用方法"><a href="#String常用方法" class="headerlink" title="String常用方法"></a>String常用方法</h2><h3 id="判断功能："><a href="#判断功能：" class="headerlink" title="判断功能："></a>判断功能：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object anObject)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>​        将此字符串与指定的对象比较。当且仅当该参数不为 null，并且是与此对象表示相同字符序列的 String 对象时，结果才为 true。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equalsIgnoreCase</span><span class="params">(String anotherString)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>将此 String 与另一个 String比较，不考虑大小写。如果两个字符串的长度相同，并且其中的相应字符都相等（忽略大小写），则认为这两个字符串是相等的。 </p>
+<p>举例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"abc"</span>;</span><br><span class="line">String str2 = <span class="string">"abc"</span>;</span><br><span class="line">String Str3 = <span class="string">"Abc"</span>;</span><br><span class="line">System.out.println(str1.equals(str2));		<span class="comment">//true</span></span><br><span class="line">System.out.println(str1.equals(str3));		<span class="comment">//false</span></span><br><span class="line">System.out.println(str1.equalsIgnoreCase(Str3));   <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="获取方法"><a href="#获取方法" class="headerlink" title="获取方法"></a>获取方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">length</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+
+<p>​        返回此字符串的长度。长度等于字符串中 Unicode 代码单元的数量。 </p>
+<p>举例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"abc"</span>;</span><br><span class="line">System.out.println(str1.length());   <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public char charAt(int index)</span><br></pre></td></tr></table></figure>
+
+<p>​        返回指定索引处的 char 值。索引范围为从 0 到 length() - 1。序列的第一个 char 值位于索引 0 处，第二个位于索引 1 处，依此类推，这类似于数组索引。 </p>
+<p>如果 index 参数为负或小于此字符串的长度。抛出IndexOutOfBoundsException </p>
+<p>举例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">char</span> ch = str1.charAt(<span class="number">2</span>);</span><br><span class="line">System.out.println(ch);  <span class="comment">// c</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">concat</span><span class="params">(String str)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>​        将指定字符串连接到此字符串的结尾。如果参数字符串的长度为 0，则返回此 String 对象。否则，创建一个<strong>新的String 对象</strong>，用来表示由此String对象表示的字符序列和参数字符串表示的字符序列连接而成的字符序列。</p>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str1 = &quot;abc&quot;;</span><br><span class="line">String str4 = str1.concat(&quot;def&quot;);</span><br><span class="line">System.out.println(str4);  //abcdef</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">indexOf</span><span class="params">(<span class="keyword">int</span> ch)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>​        返回指定字符在此字符串中第一次出现处的索引。如果在此 String 对象表示的字符序列中出现值为 ch的字符，则返回第一次出现该字符的索引，<strong>如果未出现该字符，则返回 -1</strong>。</p>
+<p>举例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"abc"</span>;</span><br><span class="line">System.out.println(str1.indexOf(<span class="string">"b"</span>));   <span class="comment">//1</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">substring</span><span class="params">(<span class="keyword">int</span> beginIndex)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>​        返回一个新的字符串，它是此字符串的一个子字符串。该子字符串从指定索引处的字符开始，直到此字符串末尾。</p>
+<p>如果 beginIndex 为负或大于此 String 对象的长度抛出 IndexOutOfBoundsException。</p>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str1 = &quot;abcdef&quot;;</span><br><span class="line">String substring = str1.substring(2);</span><br><span class="line">System.out.println(substring);  //cdef</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">substring</span><span class="params">(<span class="keyword">int</span> beginIndex,<span class="keyword">int</span> endIndex)</span></span></span><br></pre></td></tr></table></figure>
+
+<p>​        返回一个新字符串，它是此字符串的一个子字符串。该子字符串从指定的 beginIndex 处开始，直到索引endIndex处的字符。因此，该子字符串的长度为 endIndex-beginIndex。 包括beginIndex 字符，不包括endIndex字符。</p>
+<p>如果 beginIndex 为负，或 endIndex 大于此 String对象的长度，或 beginIndex 大于 endIndex。抛出IndexOutOfBoundsException。</p>
+<p>举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str1 = &quot;abcdef&quot;;</span><br><span class="line">String substring = str1.substring(2,4);</span><br><span class="line">System.out.println(substring);  //cd</span><br></pre></td></tr></table></figure>
+
+<h3 id="转换功能"><a href="#转换功能" class="headerlink" title="转换功能"></a>转换功能</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">byte</span>[] getBytes()</span><br></pre></td></tr></table></figure>
+
+<p>​            使用平台的默认字符集将此 String 编码为 byte 序列，并将结果存储到一个新的 byte 数组中。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"abcdefg"</span>;</span><br><span class="line"><span class="keyword">byte</span>[] bytes = str1.getBytes();</span><br><span class="line">System.out.println(Arrays.toString(bytes));  <span class="comment">//[97, 98, 99, 100, 101, 102, 103]</span></span><br></pre></td></tr></table></figure>
+
+<p>将此字符串转换为一个新的字符数组。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String str1 = <span class="string">"abcdefg"</span>;</span><br><span class="line"><span class="keyword">char</span>[] charArray = str1.toCharArray();</span><br><span class="line">System.out.println(Arrays.toString(charArray));  <span class="comment">//[a, b, c, d, e, f, g]</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="分割功能"><a href="#分割功能" class="headerlink" title="分割功能"></a>分割功能</h3><p>String[] split(String regex)：根据给定正则表达式的匹配拆分此字符串。 </p>
+<p>String[] split(String regex, int limit)：根据匹配给定的正则表达式来拆分此字符串，最多不超过limit个，如果超过了，剩下的全部都放到最后一个元素中</p>
+<h1 id="StringBuffer类"><a href="#StringBuffer类" class="headerlink" title="StringBuffer类"></a>StringBuffer类</h1><p>StringBuffer类是可变字符序列，在进行内容的添加和删除是不会创建新的字符对象。</p>
+<p><img src="/2019/10/13/15-常用类之String类/StringBuffer.png" alt="StringBuffer源码"></p>
+<h3 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h3><p>StringBuffer的构造器不同于String。</p>
+<ul>
+<li>StringBuffe()   构造一个其中不带字符的字符串缓冲区，起始容量为16个字符</li>
+<li>StringBuffer(int  size)  构造指定容量的字符串缓冲区</li>
+<li>StringBuffer(String str)  将内容初始化为指定字符串内容    </li>
+</ul>
+<h3 id="StringBuffer常用方法"><a href="#StringBuffer常用方法" class="headerlink" title="StringBuffer常用方法"></a>StringBuffer常用方法</h3><ul>
+<li>增 ： append(xxx)  将xxxx拼接</li>
+<li>删 ：delete(int start， int end)移除此序列的子字符串中的字符。</li>
+<li>改：replace(int start,  int end)使用给定 <code>String</code> 中的字符替换此序列的子字符串中的字符。</li>
+<li>查：charAt(int  index) 返回此序列中指定索引处的 <code>char</code> 值。</li>
+<li>插：insert(int offset, xxx)  在指定序列插入xxx</li>
+<li>reverse()  将字符序列反转输出。</li>
+</ul>
+<h1 id="StringBuilder"><a href="#StringBuilder" class="headerlink" title="StringBuilder"></a>StringBuilder</h1><p>StringBuilder 和 StringBuffer 非常类似，均代表可变的字符序列，而且提供相关功能的方法也一样</p>
+<p><img src="/2019/10/13/15-常用类之String类/StringBuilder.png" alt="StringBuilder源码"></p>
+<h1 id="String，StringBuffer，-StringBuilder，"><a href="#String，StringBuffer，-StringBuilder，" class="headerlink" title="String，StringBuffer， StringBuilder，"></a>String，StringBuffer， StringBuilder，</h1><p>String（jdk1.0）：不可变序列。</p>
+<p>StringBuffer（jdk1.0）: 可变序列，线程安全，效率低。</p>
+<p>StringBuilder（jdk5.0）：可变序列，线程不安全，效率高。</p>
+<p>在作为参数传递时，方法内部String不会被改变值，StringBuffer和StringBuilder会被改变值</p>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          CodePaul
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://codepaul.cn/2019/10/13/15-常用类之String类/" title="Java常用类" target="_blank">http://codepaul.cn/2019/10/13/15-常用类之String类/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -222,66 +412,128 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/09/22/01-认识java/" class="archive-article-date">
-        <time datetime="2019-09-22T09:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-22</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/09/22/01-认识java/" target="_blank">认识Java</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">常用类</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">String</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://codepaul.cn/2019/10/13/15-常用类之String类/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+    <a href="/2019/10/13/08-接口/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          接口
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/10/10/06-面向对象--继承/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java面向对象---继承</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -322,8 +574,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
