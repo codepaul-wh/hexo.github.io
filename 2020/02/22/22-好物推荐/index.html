@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="CodePaul">
+
+
+    <meta name="subtitle" content="永远不要选择安逸">
+
+
+
+
+<title>好物推荐 | CodePaul的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">CodePaul的博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">文章</a>
+                
+                    <a class="menu-item" href="/category">类别</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+                    <a class="menu-item" href="/about">关于我</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">CodePaul的博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">文章</a>
+                
+                    <a class="menu-item" href="/category">类别</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+                    <a class="menu-item" href="/about">关于我</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">展开</a>
+        <a onclick="go_top()">回到顶部</a>
+        <a onclick="go_bottom()">去底部</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">好物推荐</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">CodePaul</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2020-02-22&nbsp;&nbsp;11:00:00</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="1-阿里巴巴开发手册"><a href="#1-阿里巴巴开发手册" class="headerlink" title="1 .阿里巴巴开发手册"></a>1 .阿里巴巴开发手册</h2><p>代码不仅要自己看的懂，重要别人看的懂，所以代码规范很重要，推荐看看阿里巴巴代码开放手册，虽然每个公司有公司的规范，但是看看龙头老大的规范还是阔以的。里面包含了命名的规范，注释的规范，等等。。。</p>
+<p>GitHub地址 <a href="https://github.com/alibaba/p3c" target="_blank" rel="noopener">https://github.com/alibaba/p3c</a></p>
+<p><img src="/2020/02/22/22-好物推荐/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%BC%80%E6%94%BE%E6%89%8B%E5%86%8C.png" alt="阿里巴巴开放手册"></p>
+<h3 id="阿里巴巴代码规范目录"><a href="#阿里巴巴代码规范目录" class="headerlink" title="阿里巴巴代码规范目录"></a>阿里巴巴代码规范目录</h3><p><img src="/2020/02/22/22-好物推荐/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83%E7%9B%AE%E5%BD%95.png" alt="阿里巴巴代码规范目录"></p>
+<h2 id="2-CODEIF"><a href="#2-CODEIF" class="headerlink" title="2. CODEIF"></a>2. CODEIF</h2><p>开放过程中最烦人的就是各种变量的命名，方法的命名，这里推荐CODEIF。一个命名网站</p>
+<p>地址：<a href="https://unbug.github.io/codelf/" target="_blank" rel="noopener">https://unbug.github.io/codelf/</a></p>
+<p>堪称命名神器</p>
+<p>Codelf通过搜索在线开源平台Github, Bitbucket, Google Code, Codeplex, Sourceforge, Fedora Projec的项目源码，帮开发者从中找出已有的匹配关键字的变量名。这个搜索服务支持直接搜索中文。codeif支持中文查询，输入中文意思，codeif可以根据需要查询尽可能满足需要的结果，并展示与查询结果相关的支持各种编程语言的代码片段以及代码库。</p>
+<p><img src="/2020/02/22/22-好物推荐/codeif.png" alt="codeif"></p>
+<h2 id="3-IDEA插件"><a href="#3-IDEA插件" class="headerlink" title="3.IDEA插件"></a>3.IDEA插件</h2><p><strong>CodeGlance</strong></p>
+<p><strong>CodeGlance</strong>是一款非常好用的<strong>代码地图</strong>插件，可以在代码编辑区的右侧生成一个竖向可拖动的代码缩略区，可以快速定位代码的同时，并且提供放大镜功能</p>
+<p><img src="/2020/02/22/22-好物推荐/6410.jpg" alt="6410"></p>
+<p><strong>Translation</strong></p>
+<p><strong>Translation</strong>是一款非常好用的<strong>翻译插件</strong>，可以随时随地翻译单词、甚至一段话，从此不再需要额外打开浏览器搜索翻译网站了！</p>
+<p><img src="/2020/02/22/22-好物推荐/6240.jpg" alt="6240"></p>
+<p><strong>MyBatis Log Plugin</strong></p>
+<p>会打印具体的SQL语句</p>
+<p><img src="/2020/02/22/22-好物推荐/6430.jpg" alt="6430"></p>
+<p><strong>Lombok</strong></p>
+<p>Lombok项目是一个Java库，它会自动插入编辑器和构建工具中，Lombok提供了一组有用的注释，用来消除Java类中的大量样板代码。仅五个字符(@Data)就可以替换数百行代码从而产生干净，简洁且易于维护的Java类。</p>
+<p><strong>Rainbow Brackets</strong></p>
+<p>在代码非常复杂时，各种<strong>俄罗斯套娃式</strong>的括号简直让人心碎，<strong>Rainbow Brackets</strong>则是一款可以对<strong>成对括号</strong>进行着色的插件，顾名思义“彩虹色的括号”，从此复杂代码一眼即可看穿！</p>
+<p>装完插件，括号都被染上了彩虹的颜色.<img src="/2020/02/22/22-好物推荐/4.jpg" alt="4"></p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>CodePaul</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permanent link:</span>
+                        <span><a href="http://codepaul.cn/2020/02/22/22-好物推荐/">http://codepaul.cn/2020/02/22/22-好物推荐/</a></span>
+                    </p>
+                
+             
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2020/01/26/21-多线程/">Java之多线程</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© CodePaul版权所有</span>
+		<span><a href="http://www.beian.miit.gov.cn/" target="_blank">赣ICP备20002036</a></span>
+		
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
