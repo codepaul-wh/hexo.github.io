@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="CodePaul">
+
+
+    <meta name="subtitle" content="永远不要选择安逸">
+
+
+
+
+<title>Java虚拟机 | CodePaul的个人博客</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">CodePaul的博客</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">文章</a>
+                
+                    <a class="menu-item" href="/category">类别</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+                    <a class="menu-item" href="/about">关于我</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">CodePaul的博客</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">文章</a>
+                
+                    <a class="menu-item" href="/category">类别</a>
+                
+                    <a class="menu-item" href="/tag">标签</a>
+                
+                    <a class="menu-item" href="/about">关于我</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+        <div class="main">
+            <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">展开</a>
+        <a onclick="go_top()">回到顶部</a>
+        <a onclick="go_bottom()">去底部</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Java虚拟机</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">CodePaul</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">2020-01-10&nbsp;&nbsp;11:00:00</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="类加载器子系统"><a href="#类加载器子系统" class="headerlink" title="类加载器子系统"></a>类加载器子系统</h1><p>类加载器子系统负责从文件系统或者网络中加载class文件</p>
+<p>classloader只负责class文件的加载，至于他是否可以运行，则由ExecutionEngine决定</p>
+<p>加载的类信息存放于一块称为方法区的内存空间，除了类的信息外，方法区中还会存放运行时常量池信息，可能还会包括字符串字面量和数字常量（这部分常量信息是class文件中常量池部分的内存映射）</p>
+<p>补充</p>
+<p>加载 .class文件的方式</p>
+<ul>
+<li>从本地系统中直接加载</li>
+<li>通过网络获取，典型场景 ： web Applet</li>
+<li>从zip压缩包中读取，成为日后jar，war格式的基础</li>
+<li>运行时计算生成，使用最多的是动态代理技术</li>
+<li>由其他文件生成 如JSP应用</li>
+<li>从专有数据库中提取.class 比较少见</li>
+<li>从加密文件中获取，典型的防.class文件被反编译的保护措施</li>
+</ul>
+<h2 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h2><ol>
+<li>通过一个类的全限定名获取定义此类的二进制字节流3</li>
+<li>将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构</li>
+<li>在内存中生成一个代表这个类的java。lang。Class对象，作为方法区这个类的各种数据的访问入口</li>
+</ol>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>链接分为三的步骤<strong>验证，准备，解析</strong></p>
+<h3 id="验证（Verify）"><a href="#验证（Verify）" class="headerlink" title="验证（Verify）"></a>验证（Verify）</h3><ul>
+<li>目的在于确保Class文件的字节流中包含信息符合当前虚拟机要求，保证被加载类的正确性，不会危害虚拟机的自身安全。</li>
+<li>主要包括四种验证，文件格式验证，元数据验证，字节码验证，符号引用验证。</li>
+</ul>
+<h3 id="准备（Prepare）"><a href="#准备（Prepare）" class="headerlink" title="准备（Prepare）"></a>准备（Prepare）</h3><ul>
+<li>为类变量分配内存并且设置该类的默认初始值，即零值，比如 int 设置为 0, boolean 设置为false。</li>
+<li>这里不包括用final修饰的static，因为final在编译的事后就会分配了，准备阶段回显式初始化。</li>
+<li>在这里不会为实例变量分配初始化，类变量会分配在方法区中，而实例变量是会随着对象一起分配到Java堆中</li>
+</ul>
+<h3 id="解析（Resolve）"><a href="#解析（Resolve）" class="headerlink" title="解析（Resolve）"></a>解析（Resolve）</h3><ul>
+<li>将常量池内的符号引用转换为直接引用的过程</li>
+<li>事实上，解析操作往往会伴随着JVM在执行初始之后在执行</li>
+<li>符号引用就是一组符号来描述引用的目标，符号引用的字面量形式明确定义在《java虚拟机规范》的Class文件格式中。直接引用就是直接指向目标的指针，相对偏移量或一个间接定位到目标的句柄。</li>
+<li>解析动作主要针对类或接口，字段，类方法，接口方法，方法类型等，对应常量池的CONSTANT_Class_info，CONSTANT_Fieldref_info，CONSTANT_Methodref_info等。</li>
+</ul>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><ul>
+<li>初始化阶段就是执行类构造器方法&lt; clinit &gt;()的过程。</li>
+<li>此方法不需定义，是javac编译器自动收集类中的所有类变量的赋值动作和静态代码块中的语句合并而来</li>
+<li>构造器方法中指令按语句在源文件中出现的顺序执行</li>
+<li>&lt; clinit&gt;() 不同于类的构造器。（构造器是虚拟机视角下的&lt; init&gt;）</li>
+<li>如果该类具有父类，JVM会保证子类的&lt; clinit&gt;() 执行前，父类的&lt; clinit&gt;() 已经执行完毕</li>
+<li>虚拟机必须保证一个类的&lt; clinit&gt;() 方法在多线程下被同步加锁。</li>
+</ul>
+<h2 id="类加载器的分类"><a href="#类加载器的分类" class="headerlink" title="类加载器的分类"></a>类加载器的分类</h2><p>JVM支持两种类型的类加载器，分别为<strong>引导类加载器（Bootstrap ClassLoader）</strong>，和<strong>自定义加载器（User-Defined ClassLoader）</strong>，从概念上来讲，自定义加载器一般指的是程序中由开发人员自定义的一类类加载器，但是Java虚拟机规范却没有这么定义，而是将所有派生于抽象类ClassLoader的类加载器都划分为自定义类加载器。无论类加载器的类型如何划分，在程序中我们最常见的类加载器始终只有3个，</p>
+<p><img src="/2020/01/10/23-JVM/2020-03-17_104053.png" alt="2020-03-17_104053"></p>
+<h3 id="引导类加载器（Bootstrap-Class-Loader）"><a href="#引导类加载器（Bootstrap-Class-Loader）" class="headerlink" title="引导类加载器（Bootstrap Class Loader）"></a>引导类加载器（Bootstrap Class Loader）</h3><ul>
+<li>引导类加载器是虚拟机自带的加载器，使用C/C++ 语言实现，嵌套在JVM内部。</li>
+<li>用来加载Java的核心库（JAVA_HOME/jre/lib/rt.jar,resources.jar,sun.boot.class.path路径下的内容），用于提供JVM自身需要的类，如String类 Object类</li>
+<li>并不继承自java。lonag。ClassLoader，没有父加载器。</li>
+<li>加载扩展类和应用程序类加载器，并指定为他们的父类加载器。</li>
+<li>出于安全考虑，Bootstrap启动类加载器只加载包名为java，javax，sun等开头的类，在java代码中获取Bootstrap类为null</li>
+</ul>
+<h3 id="扩展类加载器-（Extension-Class-Loader）"><a href="#扩展类加载器-（Extension-Class-Loader）" class="headerlink" title="扩展类加载器 （Extension Class Loader）"></a>扩展类加载器 （Extension Class Loader）</h3><ul>
+<li>Java语言编写，由sun.misc.Launcher$ExtClassLoader实现。</li>
+<li>派生于ClassLoader类</li>
+<li>父类加载器为启动类加载器</li>
+<li>从java.ext.dirs系统属性所指定的目录中加载类库，或从JDK的安装目录的jre/lib/ext子目录下加载类库，如果用户创建的JAR放在此目录下，也会自动由扩展类加载器加载。</li>
+</ul>
+<h3 id="应用程序类加载器-（系统类加载器，App-Class-Loader）"><a href="#应用程序类加载器-（系统类加载器，App-Class-Loader）" class="headerlink" title="应用程序类加载器 （系统类加载器，App Class Loader）"></a>应用程序类加载器 （系统类加载器，App Class Loader）</h3><ul>
+<li>Java语言编写，由sun。misc。Launcher$AppClassLoader实现。</li>
+<li>派生于ClassLoader类。</li>
+<li>父类加载器为启动类加载器。</li>
+<li>负责加载环境变量classpath或系统属性 java。class.path指定路径下的类库。</li>
+<li><strong>该类加载器是程序中默认的类加载器，一般来说，Java应用的类都是有他来完成加载。</strong></li>
+<li>通过ClassLoader#getSystemClassLoader（）方法可以获取到该类加载器。</li>
+</ul>
+<h3 id="用户自定义类加载器"><a href="#用户自定义类加载器" class="headerlink" title="用户自定义类加载器"></a>用户自定义类加载器</h3><p>在Java的日常应用程序开发中，类的加载几乎由上述3中类加载器相互配合执行的，在必要时，我们还可以自定义类加载器，来定制类的加载方式。</p>
+<p>为什么要自定义类加载器</p>
+<ul>
+<li>隔离加载类</li>
+<li>修改类的加载方式</li>
+<li>扩展加载源</li>
+<li>防止源码泄露</li>
+</ul>
+<h4 id="自定义类加载器步骤"><a href="#自定义类加载器步骤" class="headerlink" title="自定义类加载器步骤"></a>自定义类加载器步骤</h4><ol>
+<li>可以通过继承抽象类java。lang。ClassLoader类的方式，实现自己的类加载器，以满足一下特殊的需求。</li>
+<li>在JDK1.2之前，在自定义类加载器是，总会去继承CLassLoader类并重写loadClass（）方法，从而实现自定义类加载类，但是在JDK1.2之后已不再建议用户器覆盖loadClass（）方法，而是建议把自定义类加载逻辑写在findClass（）方法中。</li>
+<li>在编写自定义类加载器是，如果没有太过于复杂的需求，可以直接继承URLClassLOader类，这样就可以避免自己去编写findClass（）方法及其获取字节码流的方式，使自定义类加载器编写更加简洁。</li>
+</ol>
+<h3 id="获取ClassLoader的途径"><a href="#获取ClassLoader的途径" class="headerlink" title="获取ClassLoader的途径"></a>获取ClassLoader的途径</h3><p><img src="/2020/01/10/23-JVM/2020-03-17_112429.png" alt="2020-03-17_112429"></p>
+<h2 id="双亲委派机制"><a href="#双亲委派机制" class="headerlink" title="双亲委派机制"></a>双亲委派机制</h2><p>Java虚拟机堆class文件采用的是<strong>按需加载</strong>的方式，也就是说当需要使用该类是才会将它加载到内存生成class对象。而且加载某个类的class文件时，Java虚拟机采用的是<strong>双亲委派模式</strong>，即把请求交由父类处理，它是一种任务委派模式。</p>
+<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><ol>
+<li>如果一个类加载器收到了类加载请求，他并不会自己先去加载，而是把这个请求委托给父类的加载器器执行。</li>
+<li>如果父类加载器还存在其父类加载器，则进一步向上委托，依次递归，请求最终将到达顶层的启动类加载器。</li>
+<li>如果父类加载器可以完成加载任务，就成功返回，倘若父类加载器无法完成此加载任务，子加载器才会尝试自己去加载，这就是<strong>双亲委派模式。</strong></li>
+</ol>
+<p><img src="/2020/01/10/23-JVM/2020-03-17_113853.png" alt="2020-03-17_113853"></p>
+<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ul>
+<li>避免类的重复加载。</li>
+<li>保护程序安全，防止核心API被随意篡改。</li>
+</ul>
+<h2 id="沙箱安全机制"><a href="#沙箱安全机制" class="headerlink" title="沙箱安全机制"></a>沙箱安全机制</h2><p>假定选中自己编写了一个java。lang包里面有一个自定义String类，但是在加载自定义String类的时候会率先使用引导类加载器加载，而引导类加载器在加载的过程中会先加载JDK自带的文件（rt.jar包中java。lang。String。class），报错信息说没有main方法，就是因为加载的rt。jar包中的String，这样可以保证对Java核心源代码的保护，这就是<strong>沙箱安全机制</strong>。</p>
+<h2 id="判断两个Class对象是否相同"><a href="#判断两个Class对象是否相同" class="headerlink" title="判断两个Class对象是否相同"></a>判断两个Class对象是否相同</h2><p>在JVM中表示两个class对象是否为同一个类存在两个必要条件：</p>
+<ol>
+<li><p>类的完整类名必须一致，包括包名。</p>
+</li>
+<li><p>加载这个类的classLoader（指ClassLoader实例对象）必须相同。</p>
+<p>换句话说，在JVM中，即使这两个类对象来源同一个Class文件，被同一个虚拟机所加载。但只要加载它们的ClassLoader实例对象不同，那么这两个类对象也是不相等的。</p>
+</li>
+</ol>
+<p>JVM必须知道一个类型是由启动加载器加载还是用户类加载器加载的。如果一个类型是又用户类加载器加载的，<strong><code>那么JVM会将这个类加载器的一个引用作为类型信息的一部分保存在方法区中。</code></strong></p>
+<h2 id="类的主动使用和被动使用"><a href="#类的主动使用和被动使用" class="headerlink" title="类的主动使用和被动使用"></a>类的主动使用和被动使用</h2><p>主动使用：分为7种情况</p>
+<ol>
+<li><p>创建类的实例</p>
+</li>
+<li><p>访问某个类或接口的静态变量，或者对该静态变量赋值。</p>
+</li>
+<li><p>调用类的静态方法</p>
+</li>
+<li><p>反射</p>
+</li>
+<li><p>初始化一个类的子类</p>
+</li>
+<li><p>Java虚拟机启动时被标明为启动类的类</p>
+</li>
+<li><p>JDK7 开始提供的动态语言支持：</p>
+<p>java.lang.invoke.MethodHandle实例的解析结构</p>
+<p>REF_getStatic，REF_putStatic, REF_invoketStatic句柄对应的类没有初始化，则初始化</p>
+</li>
+</ol>
+<p>除了以上7种情况，其他使用Java类的方式都被看作是<strong>对类的被动使用，都不会导致I类的初始化</strong></p>
+<h1 id="运行时数据区"><a href="#运行时数据区" class="headerlink" title="运行时数据区"></a>运行时数据区</h1><p><img src="/2020/01/10/23-JVM/2020-03-15_162555.png" alt="2020-03-15_162555"></p>
+<p>Java虚拟机定义了若干种程序运行期间会使用到的运行时数据区，其中有一些会随着虚拟机启动而创建，随着虚拟机退出而销毁。另外一些则是与线程一一对应的，这些与线程对应的数据区域会随着线程开始和结束而创建和销毁。</p>
+<p>灰色的为单独线程私有，红色的为多个线程共享的。即：</p>
+<p>每个线程： 独立包括程序计数器，虚拟机栈，本地方法栈</p>
+<p>线程间共享：堆，堆外内存（永久代（jdk7）或元空间（jdk8），代码缓存）</p>
+<p><img src="/2020/01/10/23-JVM/2020-03-17_145206.png" alt="2020-03-17_145206"></p>
+<h2 id="PC寄存器—程序计数器"><a href="#PC寄存器—程序计数器" class="headerlink" title="PC寄存器—程序计数器"></a>PC寄存器—程序计数器</h2><p>JVM中的程序计数寄存器（Program Counter Register ）中， Register的命名源于CPU的寄存器，寄存器存储指令的相关信息， CPU只有把数据装载到寄存器才能够运行。</p>
+<h3 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h3><p>PC寄存器用来<strong>存储指向下一条指令的地址，也即将要执行的指令代码，</strong>由执行引擎读取下一条指令。</p>
+<p>任何时间一个线程都只有一个方法在执行，也就是所谓的<strong>当前方法</strong>，程序计数器会存储当前线程正在执行的JVM指令地址；如果是在执行native方法（本地方法）则是未指定值。</p>
+<h3 id="特点："><a href="#特点：" class="headerlink" title="特点："></a>特点：</h3><ol>
+<li>它是一块很小的内存空间，几乎可以忽略不计。也是运行速度最快的存储区域。</li>
+<li>在JVM规范中，每个线程都有自己的程序计数器，是线程私有的，生命周期与线程的生命周期保持一致。</li>
+<li>它是唯一一个在Java虚拟机规范中没有规定任何OutOtMemoryError（内存溢出）情况的区域。不会有内存溢出</li>
+</ol>
+<p><img src="/2020/01/10/23-JVM/PC%E5%AF%84%E5%AD%98%E5%99%A8.png" alt="PC寄存器"></p>
+<p><strong>它是程序控制流的指示器，分支，循环，跳转，异常处理，线程恢复等基础功能都需要依赖这个计数器来完成</strong></p>
+<p>字节码解释器工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令。</p>
+<p><img src="/2020/01/10/23-JVM/2020-03-15_171502.png" alt="2020-03-15_171502"></p>
+<p>问题：</p>
+<p>使用PC寄存器存储字节码指令地址有什么用呢？</p>
+<p>为什么使用PC寄存器记录当前线程的执行地址呢？</p>
+<p>答：因为CPU需要不停的切换各个线程，这时候切换回来以后，就得知道接着从哪开始继续执行。</p>
+<p>JVM字节码解释器就需要通过改变PC寄存器的值来明确下一条应该执行什么样的字节码指令。</p>
+<p>PC寄存器为什么会被设定为线程私有？</p>
+<p>我们都知道所谓的多线程在一个特定的时间段内只会执行某一个线程的方法，CPU会不停的做任务切换，这样必然导致经常中断或恢复，如何保证分毫无差呢？ 为了能够准确地记录各个线程正在执行的当前字节码指令地址，最好的自然是为每一个线程都分配一个PC寄存器，这样一来各个线程之间便可以进行独立计算，从而不会出现相互干扰的情况。</p>
+<h2 id="虚拟机栈（-Java-Virtual-Machine-Stack）"><a href="#虚拟机栈（-Java-Virtual-Machine-Stack）" class="headerlink" title="虚拟机栈（ Java Virtual Machine Stack）"></a>虚拟机栈（ Java Virtual Machine Stack）</h2><h3 id="出现的背景："><a href="#出现的背景：" class="headerlink" title="出现的背景："></a>出现的背景：</h3><p>由于跨平台的设计，Java指令都是根据栈来设计的。 不同平台CPU架构不同，所以不能设计为基于寄存器的。</p>
+<p>优点是 跨平台，指令集小，编译器容易实现，缺点是性能下降，实现同样的功能需要更多的指令。</p>
+<p>栈与堆的关系；</p>
+<p><strong>栈是运行时的单位，而堆事存储的单位。</strong></p>
+<p>栈解决程序的运行问题，即程序如何执行，或者说如何处理数据，堆解决的是数据存储问题即数据怎么放，放哪里。</p>
+<h3 id="概述："><a href="#概述：" class="headerlink" title="概述："></a>概述：</h3><p>Java虚拟机栈早期也叫Java栈，<strong>每个线程创建都会创建一个虚拟机栈，</strong>其内部保存一个个的<strong>栈帧</strong>（Stack Frame），对应着一次次的Java方法的调用。</p>
+<p>虚拟机栈（Java Virtual Machine Stacks）和线程是紧密联系的，每创建一个线程时就会对应创建一个Java栈，所以Java栈也是”<strong>线程私有</strong>“的内存区域，这个栈中又会对应包含多个栈帧，每调用一个方法时就会往栈中创建并压入一个栈帧，栈帧是用来存储方法数据和部分过程结果的数据结构，每一个方法从调用到最终返回结果的过程，就对应一个栈帧从入栈到出栈的过程。</p>
+<h3 id="生命周期："><a href="#生命周期：" class="headerlink" title="生命周期："></a>生命周期：</h3><p>生命周期和线程一致。</p>
+<h3 id="作用：-1"><a href="#作用：-1" class="headerlink" title="作用："></a>作用：</h3><p>主管Java程序的运行，它保存方法的局部变量，部分结果，并参与方法的调用和返回。</p>
+<h3 id="特点优点："><a href="#特点优点：" class="headerlink" title="特点优点："></a>特点优点：</h3><ol>
+<li>栈是一种快速有效的分配存储方式，<strong>访问速度仅次于程序计数器</strong></li>
+<li>JVM直接对Java栈的操作只有两个<ol>
+<li>每个方法执行，伴随这<strong>进栈（入栈，压栈）</strong></li>
+<li>执行结束后的<strong>出栈（弹栈）</strong></li>
+</ol>
+</li>
+<li><strong>对于栈来说不存在垃圾回收问题</strong></li>
+</ol>
+<p><img src="/2020/01/10/23-JVM/2020-03-17_161818.png" alt="2020-03-17_161818"></p>
+<h3 id="栈中可能出现的异常"><a href="#栈中可能出现的异常" class="headerlink" title="栈中可能出现的异常"></a>栈中可能出现的异常</h3><p>Java 虚拟机规范允许Java栈的大小是<strong>动态的或者是固定不变的。</strong></p>
+<p>如果采用固定大小的Java虚拟机栈，那每一个线程的Java徐碧姐栈容量可以在线程创建的时候独立选定，如果线程请求分配的栈容量超过Java虚拟机栈允许的最大容量，Java虚拟机就会抛出一个<strong>StackOverFlowError</strong> （栈溢出）异常</p>
+<p>如果Java虚拟机栈可以动态扩展，并且在尝试扩展的时候无法申请到足够的内存，或者在创建线程时没有足够的内存器创建对应的虚拟机栈，那Java虚拟机将会抛出一个<strong>OutOfMeomryError</strong>（内存溢出）异常</p>
+<p><strong>(1). 栈帧过多导致栈内存溢出(方法的递归调用,没设置正确停止条件)<br>(2). 栈帧过大(栈帧大小&gt;栈内存)</strong></p>
+<h3 id="设置栈内存大小"><a href="#设置栈内存大小" class="headerlink" title="设置栈内存大小"></a>设置栈内存大小</h3><p>可以使用参数 <strong>—Xss</strong>选项来设置线程的最大栈空间，栈的大小直接决定了函数调用的最大深度</p>
+<h3 id="栈中存储什么"><a href="#栈中存储什么" class="headerlink" title="栈中存储什么"></a>栈中存储什么</h3><ul>
+<li>每个线程都有自己的栈，栈中数据都是以栈帧的格式存在。</li>
+<li>在这个线程上正在执行的每个方法都各自对应一个栈帧（Stack Frame）</li>
+<li>栈帧是一个内存区块，是一个数据集，维系着方法执行过程中的各自数据信息</li>
+<li>8种基本类型的变量+对象的引用变量+实例方法都是在函数的栈内存中分配[局部变量]</li>
+</ul>
+<h3 id="栈运行原理"><a href="#栈运行原理" class="headerlink" title="栈运行原理"></a>栈运行原理</h3><ul>
+<li>JVM直接对Java栈的操作只有两个，就是怼栈帧的压栈和出栈，遵循“先进后出”、“后进先出”原则</li>
+<li>在一条活动线程中，一个时间点上，只会有一个活动的栈帧，即当前正在执行的方法的栈帧（栈顶栈帧）是有效的，这个栈帧称为<strong>当前栈帧</strong>， 与当前栈帧对应的方法就是当前方法。定义这个方法的类就是当前类</li>
+<li>执行引擎运行的所有字节码指令值针对当前栈帧进行操作。</li>
+<li><strong>如果在该方法中调用了其他方法，对应的新的栈帧会被创建，放在栈的顶端，成为新的当前帧</strong></li>
+<li>不同线程中所包含的栈帧是不允许存在相互引用的，即不可能在一个栈帧之中引用另外一个线程的栈帧。</li>
+<li>如果当前方法调用了其他方法，方法返回之际，当前栈帧会传回此方法的执行结果，给前一个栈帧，接着，虚拟机会丢弃当前栈帧，使得前一个栈帧重新成为当前栈帧。</li>
+<li>Java方法有两种返回函数的方式，一种是正常的函数返回，使用return指令，另外一种是抛出异常，不管使用哪种方式嘛都会导致栈帧被弹出。</li>
+</ul>
+<p><img src="/2020/01/10/23-JVM/2020-03-17_171939.png" alt="2020-03-17_171939"></p>
+<h3 id="栈帧内部结构"><a href="#栈帧内部结构" class="headerlink" title="栈帧内部结构"></a>栈帧内部结构</h3><p>每个栈帧中存储着：</p>
+<ul>
+<li>局部变量表（Local Variables）</li>
+<li>操作数栈（Operand Stack）</li>
+<li>动态链接（Dynamic Linking） （或指向运行时常量池的方法引用）</li>
+<li>方法返回地址（Return Address）（或方法正常退出或者异常退出的定义）</li>
+<li>一些附加信息</li>
+</ul>
+<p><img src="/2020/01/10/23-JVM/2020-03-17_172522.png" alt="2020-03-17_172522"></p>
+<h4 id="局部变量表（Local-Variables）"><a href="#局部变量表（Local-Variables）" class="headerlink" title="局部变量表（Local Variables）"></a>局部变量表（Local Variables）</h4><ul>
+<li>局部变量表也被称为局部变量数组或者本地变量表。</li>
+<li>定义为一个数组，主要用于存储方法参数和定义在方法体内的局部变量，这些数据类型包括8种基本数据类型，引用数据类型，以及returnAddress类型</li>
+<li>由于局部变量表是建立在线程的栈上，是线程的私有数据，因此不存在数据的安全问题。</li>
+<li>局部变量表所需的容量大小实在编译期确定下来的，并保存在方法的Code属性的maxinum local  variables数据项中，在方法运行期间是不会改变局部变量表的大小的。</li>
+<li>方法嵌套调用次数由栈的大小决定，一般来说，栈越大，方法的嵌套调用次数越多，对一个函数而言，它的参数和局部变量越多，使得局部变量表膨胀，它的栈帧越大，以满足方法调用所需传递的信息增大的需求。进而函数调用就会占用更多的栈空间，导致其嵌套调用的次数就会减少。</li>
+<li>局部变量表中的变量只在当前方法调用中有效。在方法执行时，虚拟机通过使用局部变量表完成参数值到参数变量列表的传递过程。当方法调用结束后，随着方法栈帧的销毁，局部变量表也会随之销毁。</li>
+</ul>
+<h5 id="关于Slot的理解"><a href="#关于Slot的理解" class="headerlink" title="关于Slot的理解"></a>关于Slot的理解</h5><ul>
+<li><p>参数值得存放总是在局部变量数组的index0开始，到数组长度-1的索引结束。</p>
+</li>
+<li><p>局部变量表，最基本的存储单元室Slot（变量槽）</p>
+</li>
+<li><p>局部变量表中存放编译期可知的8种基本数据类型，引用数据类型（reference），returnAddress类型的变量。</p>
+</li>
+<li><p>在局部变量表中，32位以内的类型只占用一个slot（包括returnAddress类型），64位的类型（long和double）占用两个slot</p>
+<ul>
+<li>byte，short，char，在存储前被转换为int，boolean也被转换为int， 0表示false， 非0表示true</li>
+<li>long，和double则占据两个Slot。</li>
+</ul>
+</li>
+<li><p>JVM会为局部变量表中的每一个Slot都分配一个访问索引，通过这个索引即可成功访问到局部变量表中指定的局部变量值。</p>
+</li>
+<li><p>当一个实例方法被调用的时候，他的方法参数和方法体内部定义的局部变量将会按照顺序被复制到局部变量表中的每一个Slot上</p>
+</li>
+<li><p>如果需要访问局部变量表中的一个64bit的局部变量值时，只需要使用前一个索引即可（比如long和double）</p>
+</li>
+<li><p>如果当前帧是由构造方法或者实例方法创建的，那么该对象引用this将会存放在index为0的slot处，其余的参数按照参数顺序继续排列。</p>
+<p><img src="/2020/01/10/23-JVM/2020-03-17_175545.png" alt="2020-03-17_175545"></p>
+</li>
+</ul>
+<h5 id="slot的重复利用"><a href="#slot的重复利用" class="headerlink" title="slot的重复利用"></a>slot的重复利用</h5><p><img src="/2020/01/10/23-JVM/C:%5CUsers%5CCodePaul%5CDesktop%5C2020-03-17_175641.png" alt="2020-03-17_175641"></p>
+<p>补充</p>
+<p>在栈帧中，与性能调优关系最为密切的部分就是局部变量表，在方法执行时，虚拟机使用局部变量表来完成方法的传递。</p>
+<p><strong>局部变量表中的变量也是重要的垃圾回收根节点，只要被局部变量表中直接或间接引用的对象都不会被回收</strong></p>
+<h4 id="操作数栈"><a href="#操作数栈" class="headerlink" title="操作数栈"></a>操作数栈</h4><ul>
+<li>每一个独立的栈帧中除了包含局部变量表以外，还包含一个后进先出的操作数栈，也可以称之为表达式栈（Expression Stack）</li>
+<li>操作数栈，在方法执行过程中，根据字节码指令，往栈中写入数据或提取数据，即入栈（push）/出栈(pop)<ul>
+<li>某些字节码指令将值压入操作数栈，其余的字节码指令将操作数取出栈使用他们后把结果压入栈</li>
+</ul>
+</li>
+<li>操作数栈，主要用于保存计算过程的中间结果，同时作为计算过程中变量临时的存储空间。</li>
+<li>操作数栈就是JVM执行引擎的一个工作区，当一个方法刚开始执行的时候，一个新的栈帧也会随之被创建出来，这个方法的操作数栈是空的。</li>
+<li>每一个操作数栈都会拥有一个明确的栈深度用于存储数值，器所需的最大深度在编译期就被定义好了，保存在方法的Code属性中，为max_stack的值。</li>
+<li>栈中的任何一个元素都是可以任意的Java数据类型<ul>
+<li>32bit的类型占用一个栈的单位深度</li>
+<li>64bit的类型占用两个栈的单位深度</li>
+</ul>
+</li>
+<li>操作数栈并非采用索引的方式来进行数据访问的，而是只能通过标准的入栈（push），出栈（pop）操作来完成一次数据访问。</li>
+<li>如果被调用的方法带有返回值得话，其返回值将会被压入当前栈帧的操作数栈中，并更新PC寄存器中下一条需要执行的字节码指令。</li>
+<li>操作数栈中元素的数据类型必须与字节码指令的序列严格匹配，这由编译器在编译期间进行验证，同时在类的加载过程中的类检验阶段的数据流分析阶段再次验证。</li>
+<li>另外<strong>Java虚拟机的解释引擎是基于栈的执行引擎</strong>，其中的栈指的就是操作数栈。</li>
+</ul>
+<h4 id="动态链接-（Dynamic-Linking）"><a href="#动态链接-（Dynamic-Linking）" class="headerlink" title="动态链接 （Dynamic Linking）"></a>动态链接 （Dynamic Linking）</h4><ul>
+<li>每一个栈帧内部都包含一个指向运行时常量池中该栈帧所属方法的引用。包含这个引用的目的就是为了支持当前方法的代码能够实现动态链接。</li>
+<li>在Java源文件被编译到字节码文件时，所有的变量和方法引用都作为符合引用保存在class文件的常量池里。比如描述一个方法调用了另外的其他方法式，就是通过常量池中指向方法的符号引用来表示的，那么动态链接的作用就是为了将这些符号引用转换为调用方法的直接引用。</li>
+</ul>
+<p><img src="/2020/01/10/23-JVM/2020-03-18_213651.png" alt="2020-03-18_213651"></p>
+<h2 id="本地方法栈（Native-Method-Stack）"><a href="#本地方法栈（Native-Method-Stack）" class="headerlink" title="本地方法栈（Native Method Stack）"></a>本地方法栈（Native Method Stack）</h2><h3 id="本地方法（Native-Method）"><a href="#本地方法（Native-Method）" class="headerlink" title="本地方法（Native Method）"></a>本地方法（Native Method）</h3><p>先介绍一下什么是本地方法，简单来说，一个Native Method就是一个Java调用非Java代码的接口</p>
+<p>作用：</p>
+<p>是融合不同的编程语言为Java所用，它的初衷是融合C/C++程序。</p>
+<p>使用native 标记的方法就是本地方法接口，只有方法声明，没有方法体。</p>
+<p><strong>Java虚拟机栈用于管理Java方法的调用，而本地方法栈用于管理本地方法的调用、</strong></p>
+<ul>
+<li>本地方法栈也是线程私有的。</li>
+<li>运行被实现橙固定或者是可动态扩展的内存大小。<ul>
+<li>如果线程请求分配的栈容积超过本地方法栈允许的最大容量，Java虚机将会抛出一个Stack Over Flow Error</li>
+<li>如果本地方法栈可以动态扩展，并且在尝试扩展的时候无法申请到足够的内存，或者在创建新的线程时没有足够的内存去创建对应的本地方法栈，那么Java虚拟机将会抛出一个 Out Of Memory Error异常。</li>
+</ul>
+</li>
+<li>本地方法栈的具体做法是 Native Method Stack中登记 native方法，在Execution Engine（执行引擎）执行时加载本地方法库。</li>
+</ul>
+<h2 id="堆区（heap）"><a href="#堆区（heap）" class="headerlink" title="堆区（heap）"></a>堆区（heap）</h2><h3 id="概述：-1"><a href="#概述：-1" class="headerlink" title="概述："></a>概述：</h3><p>一个 JVM 实例只存在一个堆内存，堆内存的大小是可以调节的。类加载器读取了类文件后，需要把类、方法、 常变量放到堆内存中，保存所有引用类型的真实信息，以方便执行器执行</p>
+<p><strong>堆中存放对象本身，全局变量</strong>。</p>
+<h3 id="特点：-1"><a href="#特点：-1" class="headerlink" title="特点："></a>特点：</h3><p>它是线程共享的，需要考虑线程安全问题，有垃圾回收机制。</p>
+<p>最大的区域  </p>
+<h3 id="堆的内部结构："><a href="#堆的内部结构：" class="headerlink" title="堆的内部结构："></a>堆的内部结构：</h3><p><img src="/2020/01/10/23-JVM/2020-03-18_222324.png" alt="2020-03-18_222324"></p>
+<ul>
+<li><p>堆内存分为年轻代（Young Generation）、老年代（Old Generation），非堆内存就一个永久代（Permanent Generation）。</p>
+</li>
+<li><p>年轻代又分为Eden和Survivor区。Survivor区由FromSpace和ToSpace组成。Eden区占大容量，Survivor两个区占小容量，默认比例是8:1:1</p>
+</li>
+<li><p>堆内存的用途：存放的是对象，通过new出来的对象都存放在堆中，垃圾回收器根据垃圾回收算法回收这些垃圾</p>
+</li>
+<li><p>非堆内存用途：永久代，也称方法区，存储运行时长期存活的对象，比如类的元数据，方法常量属性等。</p>
+</li>
+</ul>
+<p>在JDK1.8版本废弃了永久代，替代的是元空间（MetaSpace），元空间与永久代上类似，都是方法区的实现，他们最大区别是：元空间并不在JVM中，而是使用本地内存。<br>元空间有注意有两个参数：</p>
+<ul>
+<li>MetaspaceSize ：初始化元空间大小，控制发生GC阈值</li>
+<li>MaxMetaspaceSize ： 限制元空间大小上限，防止异常占用过多物理内存</li>
+</ul>
+<h4 id="新生代"><a href="#新生代" class="headerlink" title="新生代"></a>新生代</h4><p>新生代是类的诞生，成长，消亡的区域，一个类在这里产生，应用，最后被GC垃圾回收结束生命。新生区又分为两个部分，伊甸区和幸存者区，所有的类都是在伊甸区被new出来的，幸存者区有两个，FromSpace和ToSpace。</p>
+<p>当伊甸区的空间用完是，就会进行垃圾回收（(Minor GC)），gc会把伊甸区不再被其他对象引用的对象标记为垃圾对象干并且干掉，不是垃圾的对象存储进幸存者0区，把伊甸区让出空间。</p>
+<p>详细过程：</p>
+<p>当伊甸区（Eden）满的时候，就会进行垃圾回收，把把伊甸区不再被其他对象引用的对象销毁，然后把剩余对象拷贝到幸存者0区（SurvivorFrom区），当伊甸区再次触发GC时会扫描伊甸区（Eden）和幸存者0区（SurvivorFrom区），对这两个区域进行垃圾回收，经过这次回收还存活的对象将被拷贝到幸存者1区（SurvivorTo区），同时对象年龄+1.</p>
+<p>然后清空伊甸区（Eden）和幸存者0区（SurvivorFrom），最后幸存者0区（SurvivorFrom）和幸存者1区（SurvivorTo）互换，原SurvivorTo成为下一次GC时的SurvivorFrom，部分对象在From和To区域中复制时一直存活下去，年龄达到15就会存入老年代。</p>
+<h4 id="老年代"><a href="#老年代" class="headerlink" title="老年代"></a>老年代</h4><p>老年代用于保存从新生代中筛选出来的对象。</p>
+<p>当对象在新生代经历15次GC回收会依然存活则进入老年代，如果老年代也满了，就会触发MajorGC（FullGC），进行老年代的内存清理。若老年代执行了MajorGC（FullGC）之后依然无法进行对象的保存，就会产生OutOfMemoryError异常（OOM内存溢出）</p>
+<p>出现 java.lang.OutOfMemoryError: Java heap space 异常，说明 Java 虚拟机的堆内存不够。原因有二： </p>
+<p>（1）Java 虚拟机的堆内存设置不够，可以通过参数-Xms、-Xmx 来调整。 </p>
+<p>（2）代码中创建了大量大对象，并且长时间不能被垃圾收集器收集（存在被引用）。</p>
+<h4 id="永久区"><a href="#永久区" class="headerlink" title="永久区"></a>永久区</h4><p>永久区是一个常驻内存区域，用于存放JDK自身所携带的Class，Interface的元数据，也就是说它存储的是 </p>
+<p>运行环境必须的类信息，被装载进此区域的数据是不会被垃圾回收器回收掉的，关闭 JVM 才会释放此区域所占用 </p>
+<p>的内存。</p>
+<p>如果出现 java.lang.OutOfMemoryError: PermGen space，说明是 Java 虚拟机对永久代 Perm 内存设置不够。一般 出现这种情况，都是程序启动需要加载大量的第三方 jar 包。例如：在一个 Tomcat 下部署了太多的应用。或者大量动态反射生成的类不断被加载，最终导致 Perm 区被占满。 </p>
+<p>JDK1.6及之前，有永久区，常量池在方法区。</p>
+<p>JDK1.7: 有永久代，但已经逐步“去永久代”，常量池在堆。</p>
+<p>JDK1.8及之后：无永久代，常量池在元空间。</p>
+<h4 id="方法区（Method-Area）"><a href="#方法区（Method-Area）" class="headerlink" title="方法区（Method Area）"></a>方法区（Method Area）</h4><p>实际而言，方法区（Method Area）和堆一样，是各个线程共享的内存区域，它用于存储虚拟机加载的类消息，成员变量、方法、构造器，编译器编译后的代码等等。虽然JVM规范将方法区描述为堆的一个逻辑部分，但它却还有一个别名 Non—Heap（非堆），目的就是和堆分开。方法区的创建是在Java 虚拟机启动时被创建。</p>
+<p>很多开发者将方法区称之为“永久代”，但严格本质上说两者不同，或者说使用永久代来实现方法区而已。，永久代</p>
+<p>是方法区的一个实现。</p>
+<p>常量池（Constant Pool）是方法区的一部分，Class文件除了有类的版本，字段，方法，接口等描述信息外，还有一项信息就是常量池，这部分内容将在类加载后进入方法区的运行时常量池中存放。</p>
+<p><strong>常量池和运行时常量池</strong></p>
+<ul>
+<li>常量池，就是一张表，虚拟机指令根据这张常量表找到要执行的类名、方法名、参数类型、字面量等信息</li>
+<li>运行时常量池，常量池是 *.class 文件中的，当该类被加载，它的常量池信息就会放入运行时常量池，并把里面的符号地址变为真实地址</li>
+</ul>
+<h3 id="堆内存调优"><a href="#堆内存调优" class="headerlink" title="堆内存调优"></a>堆内存调优</h3><p>新生代常用配置参数：</p>
+<p><strong><code>-Xms:</code></strong> <strong>设置初始化分配大小，默认是物理内存的1/64；</strong></p>
+<p><strong><code>-Xmx:</code></strong> <strong>最大分配内存大小，默认是物理内存的1/4;</strong></p>
+<p><strong><code>-XX:+PrintGCDetails：</code>输出详细的GC 处理日记</strong></p>
+<h1 id="GC垃圾回收"><a href="#GC垃圾回收" class="headerlink" title="GC垃圾回收"></a>GC垃圾回收</h1><p>GC：JVM 垃圾收集(Java Garbage Collection )</p>
+<p>自动垃圾收集机制是不定时查看堆内存、判定哪些对象是在使用的对象和未使用的对 象、删除未使用的对象的一个过程。</p>
+<p>GC采用分代收集算法</p>
+<ul>
+<li>次数上频繁收集Young区</li>
+<li>次数上较少收集Old区</li>
+<li>基本不动Perm区</li>
+</ul>
+<p>GC按照回收区域分为两种类型：</p>
+<ol>
+<li>普通GC（minor GC）：只针对新生代区域的GC。</li>
+<li>全局GC（major GC或者 Full GC），针对老年代的GC,出现了Major GC，经常会伴随至少一次的Minor GC（但并不是绝对的）。Major GC的速度一般要比Minor GC慢上10倍以上</li>
+</ol>
+<p>GC算法：</p>
+<h2 id="引用计数法"><a href="#引用计数法" class="headerlink" title="引用计数法"></a>引用计数法</h2><h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><p>有一个对象A， 任何一个对象对A的引用，那么对象A的计数器将+1，当引用失败时，对象A的引用计数器就-1，如果对象A的计数器值为0，就说明对象A没有引用了，可以被回收。</p>
+<h3 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h3><ul>
+<li>每次对对象的赋值时均要维护引用计数器，且计数器本身也有一定消耗。</li>
+<li>较难处理循环引用。</li>
+</ul>
+<h2 id="复制算法-Copying"><a href="#复制算法-Copying" class="headerlink" title="复制算法(Copying)"></a>复制算法(Copying)</h2><p>在新生代中使用的是<strong>minor GC</strong>，这个GC算法就是<strong>复制算法</strong>。</p>
+<h2 id="标记清除-Mark-Sweep"><a href="#标记清除-Mark-Sweep" class="headerlink" title="标记清除(Mark-Sweep)"></a>标记清除(Mark-Sweep)</h2><p>老年代一般由标记清除或者是标记清除与标记整理混合实现。</p>
+<h3 id="原理：-1"><a href="#原理：-1" class="headerlink" title="原理："></a>原理：</h3><ol>
+<li>标记：从根节点开始扫描。把存活的对象进行标记。</li>
+<li>清除：扫描整个内存空间，回收未被标记的对象。</li>
+</ol>
+<p>当堆中的有效空间（available memory）被耗尽时，就会<strong><code>停止</code></strong>整个程序（stop the world），然后进行两项工作。标记，清除</p>
+<h3 id="缺点：-1"><a href="#缺点：-1" class="headerlink" title="缺点："></a>缺点：</h3><ul>
+<li>要暂停整个应用。</li>
+<li>清理出来的空闲内存不连续，会产生内存碎片。</li>
+<li>需要扫描两次，耗时严重。</li>
+</ul>
+<h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><p>不需要额外的空间。</p>
+<h2 id="标记压缩算法（Mark-Compact）"><a href="#标记压缩算法（Mark-Compact）" class="headerlink" title="标记压缩算法（Mark-Compact）"></a>标记压缩算法（Mark-Compact）</h2><h3 id="原理：-2"><a href="#原理：-2" class="headerlink" title="原理："></a>原理：</h3><p>为了进一步改善性能</p>
+<ol>
+<li>标记（mark）：与标记清除一样。</li>
+<li>压缩（compact）：再次扫描，并往一端移动存活对象。</li>
+</ol>
+<p>在整理压缩阶段，不再对标记的对象做回收，而是通过所有存活的对象都向一端移动，然后直接清除边界以外的内存。</p>
+<p>标记的存活对象将会被整理，按照内存地址依次排列，而未被标记的内存被清理掉，如此一来，当我们需要给新对象分配内存时，JVM只需要持有一个内存的起始地址即可。这比维护一个空闲列表显然少了许多开销。</p>
+<p>标记压缩算法不仅可以弥补标记清除算法当做，内存区域分散的缺点，也消除了复制算法中，内存减半的高额代价。</p>
+<h3 id="缺点：-2"><a href="#缺点：-2" class="headerlink" title="缺点："></a>缺点：</h3><p>效率不高，不仅要标记所有存活的对象，还有整理所有存活对象的引用地址。</p>
+<p>内存效率：复制算法 &gt; 标记清除算法 &gt; 标记整理算法。</p>
+<p>内存整齐度： 复制算法 = 标记整理算法  &gt; 标记清除算法。</p>
+<p>内存利用率： 标记整理算法 = 标记清除算法 &gt; 复制算法。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>CodePaul</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permanent link:</span>
+                        <span><a href="http://codepaul.cn/2020/01/10/23-JVM/">http://codepaul.cn/2020/01/10/23-JVM/</a></span>
+                    </p>
+                
+             
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/JVM，虚拟机/"># JVM，虚拟机</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2020/01/26/21-多线程/">Java之多线程</a>
+            
+            
+            <a class="next" rel="next" href="/2019/12/29/20-IO流/">Java之IO流</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+        </div>
+        <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© CodePaul版权所有</span>
+		<span><a href="http://www.beian.miit.gov.cn/" target="_blank">赣ICP备20002036</a></span>
+		
+    </div>
+</footer>
+
+    </div>
+</body>
+</html>
